@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jovée Link — Nails. Connected.</title>
-    <meta name="description" content="Jovée Link connects nail artists with clients. Get discovered, manage bookings, and grow your business — all in one app.">
+    <title>Jovée Voice — AI Receptionist for Nail Salons</title>
+    <meta name="description" content="Jovée Voice answers every call, books every appointment, and speaks your clients' language — 24/7. Built for nail salons. Starting at $149/month.">
+    <meta property="og:title" content="Jovée Voice — Never Miss Another Booking">
+    <meta property="og:description" content="The AI receptionist built for nail salons. Answers every call, books every appointment, speaks multiple languages, never takes a day off.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/logo-voice-dark.png">
     <link rel="icon" type="image/png" href="assets/logo-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <style>
-        /* ========================================
+        /* ============================================
            RESET & BASE
-           ======================================== */
+           ============================================ */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -20,185 +24,134 @@
         }
 
         :root {
-            /* Primary Teal Scale */
-            --teal-50:  #E6F7F7;
-            --teal-100: #B3ECEC;
-            --teal-200: #80E0E0;
-            --teal-300: #5CD2D2;
-            --teal-400: #3DBFBF;
-            --teal-500: #2A9D9D;
-            --teal-600: #1F8080;
-            --teal-700: #166363;
-            --teal-800: #0D4747;
-            --teal-900: #062D2D;
+            /* PRIMARY — Teal */
+            --accent: #3DBFBF;
+            --accent-dark: #2A9D9D;
+            --accent-light: #6DD4D4;
+            --accent-soft: #E8F8F8;
 
-            /* Secondary Blush/Pink Scale */
-            --blush-50:  #FDF2F5;
-            --blush-100: #F9DDE4;
-            --blush-200: #F2C4CE;
-            --blush-300: #EBA8B7;
-            --blush-400: #E08A9E;
-            --blush-500: #D46D86;
-            --blush-600: #B85470;
-            --blush-700: #943F58;
-            --blush-800: #6F2D41;
-            --blush-900: #4A1D2B;
+            /* ACCENT — Soft Blush Pink */
+            --blush: #F2C4CE;
+            --blush-dark: #E8A0B0;
 
-            /* Neutrals */
-            --navy-900: #0C1A30;
-            --navy-800: #111F3A;
-            --navy:     #1A2B4A;
-            --navy-600: #243B60;
-            --navy-500: #2E4B76;
+            /* DARK ANCHOR — Deep Navy */
+            --ink: #1A2B4A;
+            --ink-light-hex: #243550;
 
-            --charcoal: #2D2D2D;
-            --gray-700: #4A4A4A;
-            --gray-500: #777777;
-            --gray-400: #999999;
-            --gray-300: #BBBBBB;
-            --gray-200: #E0E0E0;
-            --gray-100: #F0F0F0;
-            --offwhite: #F8F6F2;
-            --white:    #FFFFFF;
+            /* NEUTRALS */
+            --cream: #FAF8F5;
+            --white: #FFFFFF;
+            --gray-100: #F7F7F7;
+            --gray-200: #E8E8E8;
+            --gray-300: #D1D1D1;
+            --gray-400: #718096;
+            --gray-500: #4A5568;
+            --gray-600: #2D3748;
+            --ink-light: #4A5568;
+            --ink-lighter: #718096;
 
-            /* Semantic */
-            --teal:       var(--teal-400);
-            --teal-dark:  var(--teal-500);
-            --blush:      var(--blush-200);
-            --blush-dark: var(--blush-400);
+            /* SEMANTIC */
+            --success: #38A169;
+            --live: #48BB78;
 
-            /* Typography */
-            --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-            /* Radius */
-            --radius-sm: 12px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-xl: 32px;
-
-            /* Shadows */
-            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.06);
-            --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.10);
-            --shadow-nav: 0 4px 24px rgba(0, 0, 0, 0.06);
-
-            /* Motion */
-            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            /* MOTION */
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         html {
             scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        body {
-            font-family: var(--font);
-            color: var(--charcoal);
-            background: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        img, svg { display: block; max-width: 100%; }
-        a { text-decoration: none; color: inherit; }
-        button { font-family: inherit; cursor: pointer; border: none; background: none; }
-        ul, ol { list-style: none; }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            color: var(--gray-500);
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* ========================================
-           ANIMATIONS
-           ======================================== */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-16px); }
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(32px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes blobPulse {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            33% { transform: scale(1.05) rotate(2deg); }
-            66% { transform: scale(0.97) rotate(-1deg); }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-        }
-
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger-1 { transition-delay: 0.05s; }
-        .stagger-2 { transition-delay: 0.12s; }
-        .stagger-3 { transition-delay: 0.19s; }
-        .stagger-4 { transition-delay: 0.26s; }
-        .stagger-5 { transition-delay: 0.33s; }
-        .stagger-6 { transition-delay: 0.40s; }
-
-        /* ========================================
+        /* ============================================
            NAVIGATION
-           ======================================== */
+           ============================================ */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
-            padding: 16px 0;
-            transition: all 0.5s var(--ease-out-expo);
-        }
-
-        /* Nav over video hero: light logo & text */
-        .nav .nav-logo-dark { display: none; }
-        .nav .nav-logo-white { display: block; height: 44px; width: auto; }
-
-        .nav.scrolled {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(20px) saturate(1.8);
-            -webkit-backdrop-filter: blur(20px) saturate(1.8);
-            box-shadow: var(--shadow-nav);
-            padding: 10px 0;
-        }
-
-        /* Swap to dark logo when nav has white bg */
-        .nav.scrolled .nav-logo-dark { display: block; }
-        .nav.scrolled .nav-logo-white { display: none; }
-        .nav.scrolled .nav-logo img { height: 38px; }
-
-        .nav-inner {
+            z-index: 1000;
+            padding: 0 40px;
+            height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .nav.scrolled {
+            background: rgba(250, 248, 245, 0.9);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: 0 1px 20px rgba(26, 43, 74, 0.04);
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 0;
+            gap: 2px;
+            text-decoration: none;
+            color: var(--ink);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
         .nav-logo img {
             height: 44px;
             width: auto;
-            transition: height 0.3s var(--ease-out-expo);
+            transition: height 0.3s var(--ease-out);
         }
 
-        .nav-actions {
+        .nav.scrolled .nav-logo img {
+            height: 38px;
+        }
+
+        /* voice-text span removed — logo images include department name */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-500);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-right {
             display: flex;
             align-items: center;
             gap: 16px;
@@ -206,1138 +159,1481 @@
 
         .lang-toggle {
             display: flex;
-            align-items: center;
-            gap: 0;
-            font-size: 13px;
-            font-weight: 600;
+            border: 1.5px solid var(--gray-200);
             border-radius: 100px;
             overflow: hidden;
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s var(--ease-out-expo);
-        }
-
-        .nav.scrolled .lang-toggle {
-            border-color: var(--gray-200);
         }
 
         .lang-btn {
-            padding: 7px 14px;
-            color: rgba(255, 255, 255, 0.5);
+            padding: 5px 12px;
+            font-size: 12px;
             font-weight: 600;
-            font-size: 13px;
-            transition: all 0.3s var(--ease-out-expo);
+            letter-spacing: 0.04em;
+            border: none;
             background: transparent;
+            color: var(--gray-400);
+            cursor: pointer;
+            transition: all 0.25s var(--ease-out);
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         .lang-btn.active {
-            background: var(--white);
-            color: var(--navy);
-        }
-
-        .nav.scrolled .lang-btn {
-            color: var(--gray-500);
-        }
-
-        .nav.scrolled .lang-btn.active {
-            background: var(--navy);
+            background: var(--ink);
             color: var(--white);
         }
 
-        .lang-btn:hover:not(.active) {
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.1);
+        .lang-btn:not(.active):hover {
+            background: rgba(26, 43, 74, 0.05);
+            color: var(--gray-600);
         }
 
-        .nav.scrolled .lang-btn:hover:not(.active) {
-            color: var(--navy);
-            background: var(--gray-100);
-        }
-
-        .btn-nav-cta {
+        .btn-primary {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 24px;
-            background: var(--teal);
+            padding: 10px 22px;
+            background: var(--accent);
             color: var(--white);
             font-size: 14px;
             font-weight: 700;
-            border-radius: 100px;
-            transition: all 0.4s var(--ease-out-expo);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out);
+            letter-spacing: 0.01em;
         }
 
-        .btn-nav-cta:hover {
-            background: var(--teal-dark);
-            transform: scale(1.03);
-            box-shadow: 0 8px 24px rgba(61, 191, 191, 0.3);
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(61, 191, 191, 0.3);
         }
 
-        .btn-nav-cta:active { transform: scale(0.98); }
-
-        .btn-nav-cta svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.3s var(--ease-out-expo);
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
-        .btn-nav-cta:hover svg { transform: translateY(1px); }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            background: transparent;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            border: 2px solid var(--accent);
+            border-radius: 9999px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out);
+            letter-spacing: 0.01em;
+        }
 
-        /* Hamburger */
+        .btn-outline:hover {
+            border-color: var(--accent-dark);
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            transform: translateY(-1px);
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
-            width: 28px;
-            padding: 4px 0;
-            z-index: 110;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
         }
 
         .hamburger span {
             display: block;
+            width: 22px;
             height: 2px;
-            background: var(--white);
+            background: var(--ink);
             border-radius: 2px;
-            transition: all 0.4s var(--ease-out-expo);
-            transform-origin: center;
+            transition: all 0.3s var(--ease-out);
         }
 
-        .nav.scrolled .hamburger span {
-            background: var(--navy);
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
         }
 
-        .hamburger span:nth-child(1) { width: 100%; }
-        .hamburger span:nth-child(2) { width: 70%; }
-        .hamburger span:nth-child(3) { width: 85%; }
-
-        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
-        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); width: 100%; }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            inset: 0;
-            z-index: 105;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(32px);
-            -webkit-backdrop-filter: blur(32px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
+        .hamburger.open span:nth-child(2) {
             opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.5s var(--ease-out-expo);
         }
 
-        .mobile-menu.open { opacity: 1; pointer-events: all; }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
-        .mobile-menu a, .mobile-menu button {
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--cream);
+            z-index: 999;
+            padding: 32px 40px;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .mobile-menu.open {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            display: block;
+            text-decoration: none;
+            color: var(--ink);
             font-size: 18px;
             font-weight: 600;
-            color: var(--navy);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s var(--ease-out-expo);
+            padding: 14px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        .mobile-menu.open a, .mobile-menu.open button { opacity: 1; transform: translateY(0); }
-        .mobile-menu.open a:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu.open a:nth-child(2) { transition-delay: 0.15s; }
-        .mobile-menu.open a:nth-child(3) { transition-delay: 0.2s; }
-        .mobile-menu.open *:nth-child(4) { transition-delay: 0.25s; }
-        .mobile-menu.open *:nth-child(5) { transition-delay: 0.3s; }
-
-        .mobile-menu .btn-nav-cta { padding: 14px 36px; font-size: 16px; }
-
-        .mobile-lang-toggle {
+        .mobile-menu .mobile-lang-toggle {
             display: flex;
             gap: 0;
+            margin-top: 16px;
+            border: 1.5px solid var(--gray-200);
             border-radius: 100px;
             overflow: hidden;
-            border: 1.5px solid var(--gray-200);
+            width: fit-content;
         }
 
-        .mobile-lang-toggle .lang-btn { padding: 10px 24px; font-size: 15px; }
-
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .nav-actions .lang-toggle,
-            .nav-actions .btn-nav-cta { display: none; }
+        .mobile-menu .btn-primary {
+            margin-top: 24px;
+            justify-content: center;
+            padding: 14px 28px;
+            font-size: 16px;
         }
 
-        /* ========================================
-           HERO
-           ======================================== */
+        /* ============================================
+           HERO SECTION
+           ============================================ */
         .hero {
-            position: relative;
-            min-height: 100dvh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 100px;
-            padding-bottom: 80px;
-            overflow: hidden;
-            background: var(--navy-900);
-        }
-
-        /* Video Background */
-        .hero-video-wrap {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: cover;
-            object-position: center 20%;
-        }
-
-        /* Overlay gradient so text is always readable */
-        .hero-video-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background:
-                linear-gradient(90deg, rgba(12, 26, 48, 0.88) 0%, rgba(12, 26, 48, 0.65) 45%, rgba(12, 26, 48, 0.15) 100%);
-        }
-
-        /* Mobile: stronger overlay since text stacks on top of video */
-        @media (max-width: 900px) {
-            .hero-video-overlay {
-                background:
-                    linear-gradient(180deg, rgba(12, 26, 48, 0.82) 0%, rgba(12, 26, 48, 0.50) 55%, rgba(12, 26, 48, 0.75) 100%);
-            }
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .hero-blob-1 {
-            position: absolute;
-            top: 8%;
-            right: 12%;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(61, 191, 191, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: blobPulse 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .hero-blob-2 {
-            position: absolute;
-            top: 35%;
-            right: 2%;
-            width: 280px;
-            height: 280px;
-            background: radial-gradient(circle, rgba(242, 196, 206, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: blobPulse 10s ease-in-out infinite reverse;
-            pointer-events: none;
-        }
-
-        .hero-blob-3 {
-            position: absolute;
-            bottom: 15%;
-            left: 5%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(242, 196, 206, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: blobPulse 12s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .hero-dots {
-            display: none; /* hidden on video bg */
-        }
-
-        .hero-grid {
+            padding: 120px 40px 80px;
             position: relative;
-            z-index: 3;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 64px;
+            gap: 60px;
             align-items: center;
         }
 
-        /* Right column is empty — lets the video show through the lighter overlay */
-        .hero-video-spacer {
-            /* Intentionally empty to maintain grid layout */
+        .hero-content {
+            max-width: 580px;
         }
 
-        .hero-content { max-width: 540px; }
-
-        .hero-eyebrow {
+        .eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 7px 18px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--teal-200);
-            margin-bottom: 28px;
+            padding: 6px 14px;
+            background: var(--accent-soft);
+            color: var(--accent-dark);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            border: 1px solid var(--accent-light);
+            margin-bottom: 24px;
         }
 
-        .hero-headline {
-            font-size: clamp(50px, 6.5vw, 76px);
+        .eyebrow .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5.5vw, 68px);
             font-weight: 800;
-            color: var(--white);
-            line-height: 1.0;
-            letter-spacing: -2.5px;
+            color: var(--ink);
             margin-bottom: 20px;
+            line-height: 1.08;
         }
 
-        .hero-headline span { display: block; }
-
-        .hero-headline .headline-accent {
-            background: linear-gradient(135deg, var(--teal-300), var(--blush-200));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
         }
 
         .hero-sub {
             font-size: 18px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.65;
-            max-width: 440px;
+            line-height: 1.7;
+            color: var(--gray-500);
             margin-bottom: 36px;
+            max-width: 480px;
         }
 
         .hero-ctas {
             display: flex;
             gap: 14px;
-            margin-bottom: 28px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
-        .btn-store {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+        .hero-ctas .btn-primary {
             padding: 14px 28px;
-            background: var(--white);
-            color: var(--navy);
-            border-radius: var(--radius-md);
-            font-size: 14px;
-            font-weight: 700;
-            transition: all 0.4s var(--ease-out-expo);
+            font-size: 15px;
         }
 
-        .btn-store:hover {
-            background: var(--teal-50);
-            transform: scale(1.03);
-            box-shadow: 0 8px 28px rgba(255, 255, 255, 0.15);
+        .hero-ctas .btn-outline {
+            padding: 14px 28px;
+            font-size: 15px;
         }
 
-        .btn-store:active { transform: scale(0.98); }
+        .btn-outline .play-icon {
+            width: 16px;
+            height: 16px;
+        }
 
-        .btn-store svg { width: 22px; height: 22px; flex-shrink: 0; }
-
-        .btn-store-text {
+        .trust-row {
             display: flex;
-            flex-direction: column;
-            line-height: 1.2;
+            flex-wrap: wrap;
+            gap: 24px;
         }
 
-        .btn-store-text small { font-size: 10px; font-weight: 500; opacity: 0.7; }
-        .btn-store-text strong { font-size: 15px; font-weight: 700; }
-
-        .hero-proof {
+        .trust-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 14px;
+            font-size: 13px;
+            color: var(--gray-500);
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.5);
         }
 
-        .hero-proof-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--blush-300);
-            border-radius: 50%;
+        .trust-item .check {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 15px;
         }
 
-        /* Phone Mockup */
+        /* ============================================
+           HERO PHONE MOCKUP
+           ============================================ */
         .hero-visual {
-            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .phone-wrapper {
             position: relative;
-            animation: float 5s ease-in-out infinite;
         }
 
-        .phone-frame {
-            position: relative;
-            width: 280px;
-            height: 570px;
-            background: linear-gradient(160deg, var(--navy), var(--navy-900));
-            border-radius: 40px;
-            padding: 12px;
-            box-shadow:
-                0 40px 80px rgba(26, 43, 74, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.08) inset,
-                0 2px 0 rgba(255, 255, 255, 0.06) inset;
-        }
-
-        .phone-screen {
+        .call-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(160deg, var(--offwhite) 0%, var(--white) 40%, var(--blush-50) 100%);
-            border-radius: 30px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .phone-notch {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 28px;
-            background: var(--navy);
-            border-radius: 0 0 18px 18px;
-        }
-
-        .phone-screen-content {
-            padding: 44px 16px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            height: 100%;
-        }
-
-        .phone-greeting {
-            font-size: 17px;
-            font-weight: 800;
-            color: var(--navy);
-        }
-
-        .phone-search {
-            background: var(--gray-100);
-            border-radius: 12px;
-            padding: 10px 14px;
-            font-size: 11px;
-            color: var(--gray-400);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .phone-search-icon { width: 14px; height: 14px; opacity: 0.4; }
-
-        .phone-map {
-            flex: 1;
-            background: linear-gradient(145deg, var(--teal-50) 0%, #d6eceb 40%, var(--blush-50) 100%);
-            border-radius: 14px;
-            position: relative;
-            overflow: hidden;
-            min-height: 160px;
-        }
-
-        /* Map road lines */
-        .phone-map::before {
-            content: '';
-            position: absolute;
-            top: 30%;
-            left: 0;
-            right: 0;
-            height: 1.5px;
-            background: rgba(42, 157, 157, 0.15);
-        }
-
-        .phone-map::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 45%;
-            width: 1.5px;
-            background: rgba(42, 157, 157, 0.12);
-        }
-
-        .phone-map-pin { position: absolute; width: 32px; height: 32px; }
-
-        .phone-map-pin-dot {
-            width: 12px;
-            height: 12px;
-            background: var(--teal);
-            border-radius: 50%;
-            border: 2.5px solid var(--white);
-            box-shadow: 0 2px 8px rgba(61, 191, 191, 0.4);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .phone-map-pin-pulse {
-            width: 28px;
-            height: 28px;
-            background: rgba(61, 191, 191, 0.15);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: blobPulse 2s ease-in-out infinite;
-        }
-
-        .pin-1 { top: 25%; left: 22%; }
-        .pin-2 { top: 55%; left: 62%; }
-        .pin-3 { top: 72%; left: 30%; }
-
-        .pin-blush .phone-map-pin-dot {
-            background: var(--blush-400);
-            box-shadow: 0 2px 8px rgba(224, 138, 158, 0.4);
-        }
-        .pin-blush .phone-map-pin-pulse {
-            background: rgba(242, 196, 206, 0.2);
-        }
-
-        .phone-card-mini {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 10px 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        .phone-card-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--blush-200), var(--blush-400));
-            flex-shrink: 0;
-        }
-
-        .phone-card-info { flex: 1; }
-        .phone-card-name { font-size: 11px; font-weight: 700; color: var(--navy); }
-        .phone-card-detail { font-size: 9px; color: var(--gray-400); font-weight: 500; }
-
-        .phone-card-rating {
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            font-size: 10px;
-            font-weight: 700;
-            color: var(--teal-500);
-        }
-
-        .phone-card-rating svg { width: 10px; height: 10px; fill: var(--teal-400); }
-
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 0; }
-            .hero-content { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
-            .hero-sub { max-width: 100%; }
-            .hero-ctas { justify-content: center; }
-            .hero-proof { justify-content: center; }
-            .hero-video-spacer { display: none; }
-            .hero-blob-1 { width: 200px; height: 200px; top: 5%; right: 5%; }
-            .hero-blob-2 { width: 150px; height: 150px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero { padding-top: 88px; padding-bottom: 48px; }
-            .hero-ctas { flex-direction: column; width: 100%; }
-            .btn-store { justify-content: center; width: 100%; }
-        }
-
-        /* ========================================
-           PAIN POINT BANNER
-           ======================================== */
-        .pain-banner {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-800) 50%, var(--teal-800) 100%);
-            padding: 60px 24px;
-            text-align: center;
+            max-width: 420px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--gray-200);
             position: relative;
             overflow: hidden;
         }
 
-        .pain-banner::before {
-            content: '';
-            position: absolute;
-            top: -60%;
-            right: -5%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(242, 196, 206, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .pain-banner::after {
-            content: '';
-            position: absolute;
-            bottom: -40%;
-            left: -5%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(61, 191, 191, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .pain-banner h2 {
-            font-size: clamp(22px, 3.5vw, 32px);
-            font-weight: 700;
-            color: var(--white);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.4;
-            position: relative;
-            z-index: 1;
-        }
-
-        .pain-banner h2 span {
-            color: var(--blush-200);
-        }
-
-        /* ========================================
-           WAVE DIVIDERS
-           ======================================== */
-        .wave-divider { width: 100%; line-height: 0; overflow: hidden; }
-        .wave-divider svg { width: 100%; height: 60px; display: block; }
-        .wave-divider-flip svg { transform: scaleY(-1); }
-
-        /* ========================================
-           HOW IT WORKS
-           ======================================== */
-        .how-section {
-            padding: 96px 0 80px;
-            background: var(--offwhite);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
-        .section-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 16px;
-            background: linear-gradient(135deg, var(--teal-50), var(--blush-50));
-            border: 1px solid var(--teal-100);
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--teal-600);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: clamp(32px, 4.2vw, 46px);
-            font-weight: 800;
-            color: var(--navy);
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin-bottom: 14px;
-        }
-
-        .section-subtitle {
-            font-size: 17px;
-            font-weight: 400;
-            color: var(--gray-500);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            margin-bottom: 48px;
-            background: var(--white);
-            border-radius: 100px;
-            padding: 4px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .tab-btn {
-            padding: 12px 32px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--gray-500);
-            border-radius: 100px;
-            transition: all 0.4s var(--ease-out-expo);
-        }
-
-        .tab-btn.active {
-            background: var(--navy);
-            color: var(--white);
-            box-shadow: 0 4px 16px rgba(26, 43, 74, 0.2);
-        }
-
-        .tab-btn:hover:not(.active) { color: var(--navy); }
-
-        .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeUp 0.5s var(--ease-out-expo) forwards; }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        .step-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 36px 28px;
-            text-align: center;
-            box-shadow: var(--shadow-card);
-            transition: all 0.5s var(--ease-out-expo);
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            overflow: hidden;
-        }
-
-        .step-card::before {
+        .call-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 3px;
-            border-radius: 3px 3px 0 0;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
         }
 
-        .step-card:nth-child(1)::before { background: linear-gradient(90deg, var(--teal-400), var(--teal-300)); }
-        .step-card:nth-child(2)::before { background: linear-gradient(90deg, var(--blush-300), var(--blush-200)); }
-        .step-card:nth-child(3)::before { background: linear-gradient(90deg, var(--teal-500), var(--teal-400)); }
-
-        .step-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-card-hover);
+        .call-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
         }
 
-        .step-number {
-            position: absolute;
-            top: 20px;
-            left: 22px;
-            font-size: 13px;
-            font-weight: 800;
-            color: var(--teal-100);
+        .call-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
 
-        .step-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
+        .call-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-soft), var(--accent-light));
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 22px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-dark);
         }
 
-        .step-card:nth-child(1) .step-icon { background: var(--teal-50); }
-        .step-card:nth-child(2) .step-icon { background: var(--blush-50); }
-        .step-card:nth-child(3) .step-icon { background: var(--teal-50); }
-
-        .step-card:nth-child(1) .step-icon svg { color: var(--teal-500); }
-        .step-card:nth-child(2) .step-icon svg { color: var(--blush-500); }
-        .step-card:nth-child(3) .step-icon svg { color: var(--teal-600); }
-
-        .step-icon svg { width: 28px; height: 28px; }
-
-        .step-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-        .step-card p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
-
-        @media (max-width: 768px) {
-            .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-            .tabs { width: 100%; max-width: 360px; }
-            .tab-btn { padding: 10px 20px; font-size: 13px; flex: 1; text-align: center; }
+        .call-info h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+            letter-spacing: 0;
+            line-height: 1.3;
         }
 
-        /* ========================================
-           FEATURES
-           ======================================== */
-        .features-section {
-            padding: 96px 0;
-            background: var(--white);
+        .call-info span {
+            font-size: 12px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        .live-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: #F0FFF4;
+            border: 1px solid var(--live);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--live);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--live);
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .call-timer {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--ink);
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .call-transcript {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .msg {
+            max-width: 88%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            animation: fadeUp 0.5s var(--ease-out) both;
+        }
+
+        .msg-caller {
+            align-self: flex-end;
+            background: #F7F7F7;
+            color: var(--ink);
+            border-bottom-right-radius: 4px;
+            animation-delay: 0.6s;
+        }
+
+        .msg-jovee {
+            align-self: flex-start;
+            background: var(--accent);
+            color: var(--white);
+            border-bottom-left-radius: 4px;
+            animation-delay: 1.2s;
+        }
+
+        .msg-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .call-waveform {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            height: 32px;
+            padding-top: 8px;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .wave-bar {
+            width: 3px;
+            border-radius: 3px;
+            background: var(--accent);
+            animation: wave 1.2s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) { height: 8px; animation-delay: 0s; }
+        .wave-bar:nth-child(2) { height: 16px; animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { height: 24px; animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { height: 12px; animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { height: 20px; animation-delay: 0.4s; }
+        .wave-bar:nth-child(6) { height: 8px; animation-delay: 0.5s; }
+        .wave-bar:nth-child(7) { height: 16px; animation-delay: 0.6s; }
+        .wave-bar:nth-child(8) { height: 24px; animation-delay: 0.7s; }
+        .wave-bar:nth-child(9) { height: 10px; animation-delay: 0.8s; }
+        .wave-bar:nth-child(10) { height: 18px; animation-delay: 0.9s; }
+        .wave-bar:nth-child(11) { height: 6px; animation-delay: 1.0s; }
+        .wave-bar:nth-child(12) { height: 14px; animation-delay: 1.1s; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+            50% { transform: scaleY(1); opacity: 1; }
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, rgba(61, 191, 191, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        /* ============================================
+           PROBLEM SECTION (DARK)
+           ============================================ */
+        .problem {
+            background: var(--ink);
+            color: var(--white);
+            padding: 100px 40px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .problem::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(61, 191, 191, 0.12) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .problem-container {
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .problem .eyebrow {
+            background: rgba(61, 191, 191, 0.15);
+            color: var(--accent-light);
+            border-color: rgba(61, 191, 191, 0.3);
+        }
+
+        .problem .eyebrow .dot {
+            background: var(--accent-light);
+        }
+
+        .problem h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            margin-bottom: 48px;
+            line-height: 1.1;
+            color: #FFFFFF;
+        }
+
+        .problem h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .stat-card {
+            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+        }
+
+        .stat-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+        }
+
+        .problem-text {
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           HOW IT WORKS
+           ============================================ */
+        .how-it-works {
+            padding: 100px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header .eyebrow {
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 0;
+        }
+
+        .section-header h2 em {
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .step-card:hover {
+            border-color: var(--accent-light);
+            box-shadow: 0 8px 32px rgba(61, 191, 191, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .step-card p {
+            font-size: 14.5px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           LIVE DEMO
+           ============================================ */
+        .demo {
+            padding: 100px 40px;
+            background: var(--gray-100);
+        }
+
+        .demo-container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .demo-player {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 2px 12px rgba(26, 43, 74, 0.06);
+            margin-bottom: 20px;
+        }
+
+        .demo-player audio {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .demo-transcript {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px;
+            max-height: 320px;
+            overflow-y: auto;
+            box-shadow: 0 2px 12px rgba(26, 43, 74, 0.06);
+        }
+
+        .demo-transcript .msg {
+            animation: none;
+        }
+
+        .demo-note {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--gray-400);
+            font-style: italic;
+        }
+
+        /* ============================================
+           FEATURES
+           ============================================ */
+        .features {
+            padding: 100px 40px;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
+            max-width: 1080px;
+            margin: 0 auto;
         }
 
-        .feature-tile {
+        .feature-card {
             background: var(--white);
-            border: 1px solid var(--gray-100);
-            border-radius: var(--radius-lg);
-            padding: 32px 28px;
-            transition: all 0.5s var(--ease-out-expo);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 36px 28px;
+            transition: all 0.3s var(--ease-out);
         }
 
-        .feature-tile:hover {
+        .feature-card:hover {
+            border-color: var(--accent-light);
+            box-shadow: 0 8px 32px rgba(61, 191, 191, 0.1);
             transform: translateY(-4px);
-            box-shadow: var(--shadow-card-hover);
         }
-
-        .feature-tile:nth-child(1):hover { border-color: var(--teal-200); }
-        .feature-tile:nth-child(2):hover { border-color: var(--blush-200); }
-        .feature-tile:nth-child(3):hover { border-color: var(--teal-200); }
-        .feature-tile:nth-child(4):hover { border-color: var(--blush-200); }
-        .feature-tile:nth-child(5):hover { border-color: var(--teal-200); }
-        .feature-tile:nth-child(6):hover { border-color: var(--blush-200); }
 
         .feature-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .feature-tile:nth-child(odd) .feature-icon { background: var(--teal-50); }
-        .feature-tile:nth-child(odd) .feature-icon svg { color: var(--teal-500); }
-        .feature-tile:nth-child(even) .feature-icon { background: var(--blush-50); }
-        .feature-tile:nth-child(even) .feature-icon svg { color: var(--blush-500); }
-
-        .feature-icon svg { width: 24px; height: 24px; }
-
-        .feature-tile h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-        .feature-tile p { font-size: 14px; color: var(--gray-500); line-height: 1.55; }
-
-        @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } }
-
-        /* ========================================
-           TESTIMONIALS
-           ======================================== */
-        .testimonials-section {
-            padding: 96px 0;
-            background: linear-gradient(180deg, var(--blush-50) 0%, var(--offwhite) 100%);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 36px 30px 32px;
-            box-shadow: var(--shadow-card);
-            position: relative;
-            transition: all 0.5s var(--ease-out-expo);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-card-hover);
-        }
-
-        .testimonial-quote-mark {
-            font-size: 52px;
-            line-height: 1;
-            color: var(--blush-200);
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-
-        .testimonial-stars {
-            display: flex;
-            gap: 3px;
+            font-size: 28px;
             margin-bottom: 16px;
         }
 
-        .testimonial-stars svg { width: 16px; height: 16px; fill: var(--teal-400); }
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
 
-        .testimonial-text {
-            font-size: 15px;
-            font-style: italic;
-            color: var(--gray-700);
-            line-height: 1.65;
+        .feature-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           PRICING COMPARISON
+           ============================================ */
+        .pricing-compare {
+            padding: 100px 40px;
+            background: var(--gray-100);
+        }
+
+        .compare-table {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(26, 43, 74, 0.06);
+        }
+
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .compare-row:last-child {
+            border-bottom: none;
+        }
+
+        .compare-row.header {
+            background: var(--ink);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .compare-cell {
+            padding: 16px 24px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .compare-cell:first-child {
+            font-weight: 600;
+            color: var(--gray-500);
+            font-size: 13px;
+        }
+
+        .compare-cell.highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           PRICING TIERS
+           ============================================ */
+        .pricing {
+            padding: 60px 40px 100px;
+            background: var(--gray-100);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1080px;
+            margin: 0 auto 48px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1.5px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(26, 43, 74, 0.08);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(61, 191, 191, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            padding: 4px 16px;
+            border-radius: 100px;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .pricing-card .price {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .pricing-card .price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--gray-400);
+        }
+
+        .pricing-card .tier-desc {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-top: 4px;
             margin-bottom: 24px;
         }
 
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 14px;
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 28px;
         }
 
-        .testimonial-avatar {
-            width: 44px;
-            height: 44px;
+        .pricing-card ul li {
+            font-size: 14px;
+            color: var(--ink-light);
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .pricing-card ul li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .pricing-card .btn-primary {
+            width: 100%;
+            justify-content: center;
+            padding: 14px 24px;
+        }
+
+        .pricing-guarantee {
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        .pricing-guarantee span {
+            font-weight: 600;
+            color: var(--gray-500);
+        }
+
+        .pricing-bottom-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .pricing-bottom-cta .btn-primary {
+            padding: 16px 36px;
+            font-size: 16px;
+        }
+
+        /* ============================================
+           FAQ
+           ============================================ */
+        .faq {
+            padding: 100px 40px;
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--ink);
+            gap: 16px;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
+            border: 1.5px solid var(--gray-300);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--white);
-            flex-shrink: 0;
+            font-size: 16px;
+            color: var(--gray-400);
+            transition: all 0.3s var(--ease-out);
         }
 
-        .avatar-teal { background: linear-gradient(135deg, var(--teal-400), var(--teal-600)); }
-        .avatar-blush { background: linear-gradient(135deg, var(--blush-300), var(--blush-500)); }
-        .avatar-navy { background: linear-gradient(135deg, var(--teal-600), var(--navy)); }
-
-        .testimonial-name { font-size: 14px; font-weight: 700; color: var(--navy); }
-        .testimonial-location { font-size: 12px; color: var(--gray-400); font-weight: 500; }
-
-        @media (max-width: 900px) {
-            .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
-        /* ========================================
-           DOWNLOAD CTA
-           ======================================== */
-        .download-section {
-            position: relative;
-            padding: 100px 0;
-            background: linear-gradient(160deg, var(--navy) 0%, var(--navy-900) 60%, var(--teal-900) 100%);
+        .faq-answer {
+            max-height: 0;
             overflow: hidden;
+            transition: max-height 0.4s var(--ease-out), padding 0.4s var(--ease-out);
+        }
+
+        .faq-answer-inner {
+            padding-bottom: 24px;
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           JOVEE FAMILY
+           ============================================ */
+        .family {
+            padding: 100px 40px;
+            background: var(--gray-100);
+        }
+
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .family-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .family-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .family-card p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
+        .family-card.current {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        /* ============================================
+           FINAL CTA
+           ============================================ */
+        .final-cta {
+            padding: 100px 40px;
             text-align: center;
         }
 
-        .download-section::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(61, 191, 191, 0.10) 0%, transparent 60%);
-            pointer-events: none;
+        .final-cta-container {
+            max-width: 640px;
+            margin: 0 auto;
         }
 
-        .download-section::after {
-            content: '';
-            position: absolute;
-            bottom: -20%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(242, 196, 206, 0.06) 0%, transparent 60%);
-            pointer-events: none;
+        .final-cta h2 {
+            font-size: clamp(30px, 3.5vw, 44px);
+            margin-bottom: 16px;
         }
 
-        .download-section .section-title {
-            color: var(--white);
-            position: relative;
-            z-index: 1;
+        .final-cta h2 em {
+            font-style: italic;
+            color: var(--accent);
         }
 
-        .download-subtitle {
+        .final-cta .sub {
             font-size: 17px;
-            color: rgba(255, 255, 255, 0.55);
-            margin-bottom: 44px;
-            position: relative;
-            z-index: 1;
+            color: var(--ink-light);
+            margin-bottom: 36px;
+            line-height: 1.65;
         }
 
-        .download-ctas {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-            position: relative;
-            z-index: 1;
+        .final-cta .btn-primary {
+            padding: 16px 36px;
+            font-size: 16px;
         }
 
-        .btn-store-light {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            background: var(--white);
-            color: var(--navy);
-            border-radius: var(--radius-md);
-            font-size: 14px;
-            font-weight: 700;
-            transition: all 0.4s var(--ease-out-expo);
-        }
-
-        .btn-store-light:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.15);
-        }
-
-        .btn-store-light:active { transform: scale(0.98); }
-        .btn-store-light svg { width: 24px; height: 24px; flex-shrink: 0; }
-
-        .download-note {
+        .final-cta .fine-print {
+            margin-top: 16px;
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.35);
-            position: relative;
-            z-index: 1;
+            color: var(--gray-400);
         }
 
-        @media (max-width: 480px) {
-            .download-ctas { flex-direction: column; align-items: center; }
-            .btn-store-light { width: 100%; max-width: 300px; justify-content: center; }
-        }
-
-        /* ========================================
+        /* ============================================
            FOOTER
-           ======================================== */
+           ============================================ */
         .footer {
-            background: var(--navy-900);
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 56px 0 32px;
-            color: rgba(255, 255, 255, 0.45);
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 60px 40px 40px;
         }
 
-        .footer-grid {
+        .footer-container {
+            max-width: 1080px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 48px;
+            gap: 32px;
         }
 
-        .footer-logo { height: 40px; width: auto; margin-bottom: 12px; }
+        .footer-brand .nav-logo {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .footer-tagline {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 8px;
+        }
 
         .footer-lang-note {
             font-size: 12px;
-            color: var(--teal-400);
-            font-weight: 500;
+            color: rgba(255, 255, 255, 0.3);
+            margin-top: 4px;
         }
 
         .footer-links {
             display: flex;
-            gap: 32px;
+            gap: 24px;
             flex-wrap: wrap;
         }
 
         .footer-links a {
-            font-size: 14px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.45);
-            transition: color 0.3s var(--ease-out-expo);
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
         }
 
-        .footer-links a:hover { color: var(--white); }
-
-        .footer-social { display: flex; gap: 12px; }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s var(--ease-out-expo);
+        .footer-links a:hover {
+            color: var(--accent-light);
         }
-
-        .footer-social a:nth-child(1) { background: rgba(242, 196, 206, 0.1); }
-        .footer-social a:nth-child(2) { background: rgba(61, 191, 191, 0.1); }
-        .footer-social a:nth-child(3) { background: rgba(242, 196, 206, 0.1); }
-
-        .footer-social a:hover { background: var(--teal-400); }
-        .footer-social svg { width: 18px; height: 18px; color: var(--teal-400); transition: color 0.3s var(--ease-out-expo); }
-        .footer-social a:hover svg { color: var(--white); }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            max-width: 1080px;
+            margin: 40px auto 0;
             padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
+            font-size: 12px;
         }
 
-        .footer-copy { font-size: 13px; }
-
-        .footer-bottom .lang-toggle {
-            border-color: rgba(255, 255, 255, 0.1);
+        .footer .lang-toggle {
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
-        .footer-bottom .lang-btn {
+        .footer .lang-btn {
             color: rgba(255, 255, 255, 0.4);
         }
 
-        .footer-bottom .lang-btn.active {
-            background: var(--teal-600);
+        .footer .lang-btn.active {
+            background: rgba(255, 255, 255, 0.15);
             color: var(--white);
         }
 
-        .footer-bottom .lang-btn:hover:not(.active) {
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.05);
+        .footer .lang-btn:not(.active):hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ============================================
+           SECTION VIDEOS
+           ============================================ */
+        .section-video {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(26, 43, 74, 0.08);
+        }
+
+        .section-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Problem section video */
+        .problem-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .problem-layout .problem-container {
+            max-width: none;
+            text-align: left;
+        }
+
+        .problem-video {
+            border-radius: 16px;
+            overflow: hidden;
+            max-height: 360px;
+        }
+
+        .problem-video video {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* How it works video row */
+        .steps-video-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 1080px;
+            margin: 48px auto 0;
+        }
+
+        .step-video-card {
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+        }
+
+        .step-video-card video {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .step-video-label {
+            padding: 16px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-align: center;
+        }
+
+        /* Demo section video */
+        .demo-video-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            background: var(--ink);
+        }
+
+        .demo-video-wrapper video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
         }
 
         @media (max-width: 768px) {
-            .footer-grid { flex-direction: column; align-items: center; text-align: center; }
-            .footer-links { justify-content: center; }
-            .footer-bottom { justify-content: center; text-align: center; }
+            .problem-layout {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .problem-layout .problem-container {
+                text-align: center;
+            }
+
+            .problem-video video {
+                height: 240px;
+            }
+
+            .steps-video-row {
+                grid-template-columns: 1fr;
+            }
+
+            .step-video-card video {
+                height: 200px;
+            }
+
+            .demo-video-wrapper video {
+                height: 220px;
+            }
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+           ============================================ */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+        .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-5 { transition-delay: 0.5s; }
+        .animate-on-scroll.delay-6 { transition-delay: 0.6s; }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .hero-sub {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-ctas {
+                justify-content: center;
+            }
+
+            .trust-row {
+                justify-content: center;
+            }
+
+            .call-card {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-right .lang-toggle {
+                display: none;
+            }
+
+            .nav-right .btn-primary {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-sub {
+                font-size: 16px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-ctas .btn-primary,
+            .hero-ctas .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .trust-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .steps-grid,
+            .features-grid,
+            .pricing-grid,
+            .family-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .compare-cell {
+                padding: 12px 12px;
+                font-size: 12px;
+            }
+
+            .problem,
+            .how-it-works,
+            .demo,
+            .features,
+            .pricing-compare,
+            .pricing,
+            .faq,
+            .family,
+            .final-cta {
+                padding: 72px 20px;
+            }
+
+            .footer {
+                padding: 40px 20px 32px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .call-card {
+                padding: 24px;
+            }
+
+            .msg {
+                font-size: 12.5px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== NAVIGATION ====== -->
-    <nav class="nav" id="nav">
-        <div class="container nav-inner">
-            <a href="#" class="nav-logo" aria-label="Jovée Link home">
-                <img src="assets/logo-dark.png" alt="Jovée Link" class="nav-logo-dark">
-                <img src="assets/logo-white.png" alt="Jovée Link" class="nav-logo-white">
-            </a>
+    <!-- NAVIGATION -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#" class="nav-logo" aria-label="Jovée Voice home">
+            <img src="assets/logo-voice-dark.png" alt="Jovée Voice">
+        </a>
 
-            <div class="nav-actions">
-                <div class="lang-toggle" role="group" aria-label="Language">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="vi">VI</button>
-                </div>
-                <a href="#download" class="btn-nav-cta">
-                    <span data-i18n="nav_cta">Get the App</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"/></svg>
-                </a>
+        <ul class="nav-links">
+            <li><a href="#how-it-works" data-i18n="nav_how">How It Works</a></li>
+            <li><a href="#features" data-i18n="nav_features">Features</a></li>
+            <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+            <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="lang-toggle" role="group" aria-label="Language">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="vi">VI</button>
             </div>
-
-            <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <a href="#book" class="btn-primary" data-i18n="nav_cta">Book a Demo Call</a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1346,508 +1642,730 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#how-it-works" class="mobile-link" data-i18n="nav_how">How it works</a>
-        <a href="#features" class="mobile-link" data-i18n="nav_features">Features</a>
-        <a href="#testimonials" class="mobile-link" data-i18n="nav_testimonials">Testimonials</a>
-        <div class="mobile-lang-toggle" role="group">
+    <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <a href="#how-it-works" data-i18n="nav_how">How It Works</a>
+        <a href="#features" data-i18n="nav_features">Features</a>
+        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <div class="mobile-lang-toggle" role="group" aria-label="Language">
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="vi">VI</button>
         </div>
-        <a href="#download" class="btn-nav-cta mobile-link" data-i18n="nav_cta">Get the App</a>
+        <a href="#book" class="btn-primary" data-i18n="nav_cta">Book a Demo Call</a>
     </div>
 
-    <!-- ====== HERO ====== -->
+    <!-- HERO -->
     <section class="hero" id="hero">
-        <!-- Video Background -->
-        <div class="hero-video-wrap">
-            <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-                <source src="assets/HeaderVideo.mp4" type="video/mp4">
-            </video>
-            <div class="hero-video-overlay"></div>
-        </div>
-
-        <div class="hero-bg">
-            <div class="hero-blob-1"></div>
-            <div class="hero-blob-2"></div>
-            <div class="hero-blob-3"></div>
-        </div>
-        <div class="container hero-grid">
+        <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z"/></svg>
-                    <span data-i18n="hero_eyebrow">The future of nail bookings</span>
+                <div class="eyebrow">
+                    <span class="dot"></span>
+                    <span data-i18n="hero_eyebrow">NEW — AI RECEPTIONIST FOR NAIL SALONS</span>
                 </div>
-                <h1 class="hero-headline">
-                    <span data-i18n="hero_h1_1">Nails.</span>
-                    <span class="headline-accent" data-i18n="hero_h1_2">Connected.</span>
-                </h1>
-                <p class="hero-sub" data-i18n="hero_sub">Find nail artists near you. Book instantly. No DMs. No guessing.</p>
+                <h1 data-i18n="hero_h1">Never miss another <em>booking.</em></h1>
+                <p class="hero-sub" data-i18n="hero_sub">Jovée Voice answers every call, books every appointment, and speaks your clients' language — 24/7. Built for nail salons. Starting at $149/month.</p>
                 <div class="hero-ctas">
-                    <a href="#" class="btn-store" aria-label="Download on App Store">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        <span class="btn-store-text">
-                            <small data-i18n="store_apple_sub">Download on the</small>
-                            <strong>App Store</strong>
-                        </span>
-                    </a>
-                    <a href="#" class="btn-store" aria-label="Get it on Google Play">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199 2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.395 12l2.303-2.492zM5.864 2.658l10.937 6.333-2.302 2.302L5.864 2.658z"/></svg>
-                        <span class="btn-store-text">
-                            <small data-i18n="store_google_sub">Get it on</small>
-                            <strong>Google Play</strong>
-                        </span>
-                    </a>
+                    <a href="#book" class="btn-primary" data-i18n="hero_cta_primary">Book a Free Demo Call</a>
+                    <button class="btn-outline" id="hear-demo-btn" data-i18n="hero_cta_secondary">
+                        <svg class="play-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="4,2 14,8 4,14" fill="currentColor" stroke="none"/></svg>
+                        Hear It In Action
+                    </button>
                 </div>
-                <p class="hero-proof">
-                    <span class="hero-proof-dot"></span>
-                    <span data-i18n="hero_proof">Trusted by nail artists across the U.S.</span>
-                </p>
-            </div>
-
-            <!-- Right side: empty spacer — video shows through the lighter overlay gradient -->
-            <div class="hero-video-spacer">
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== PAIN POINT BANNER ====== -->
-    <section class="pain-banner animate-on-scroll">
-        <h2 data-i18n="pain_text">Still managing bookings through <span>Instagram DMs</span>? There&rsquo;s a better way.</h2>
-    </section>
-
-    <!-- ====== WAVE DIVIDER ====== -->
-    <div class="wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="var(--offwhite)">
-            <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z"/>
-        </svg>
-    </div>
-
-    <!-- ====== HOW IT WORKS ====== -->
-    <section class="how-section" id="how-it-works">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-eyebrow" data-i18n="how_eyebrow">Step by step</div>
-                <h2 class="section-title" data-i18n="how_title">How it works</h2>
-                <p class="section-subtitle" data-i18n="how_subtitle">Simple for clients. Powerful for artists.</p>
-            </div>
-
-            <div class="tabs animate-on-scroll">
-                <button class="tab-btn active" data-tab="artist" data-i18n="tab_artist">I'm a Nail Artist</button>
-                <button class="tab-btn" data-tab="client" data-i18n="tab_client">I'm a Client</button>
-            </div>
-
-            <!-- Artist Tab -->
-            <div class="tab-content active" id="tab-artist">
-                <div class="steps-grid">
-                    <div class="step-card animate-on-scroll stagger-1">
-                        <span class="step-number">01</span>
-                        <div class="step-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
-                        </div>
-                        <h3 data-i18n="artist_step1_title">Create your profile</h3>
-                        <p data-i18n="artist_step1_text">Set up your services, prices, availability, and portfolio in minutes.</p>
-                    </div>
-                    <div class="step-card animate-on-scroll stagger-2">
-                        <span class="step-number">02</span>
-                        <div class="step-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
-                        </div>
-                        <h3 data-i18n="artist_step2_title">Get discovered</h3>
-                        <p data-i18n="artist_step2_text">Clients near you find your profile on the map. No more waiting for DMs.</p>
-                    </div>
-                    <div class="step-card animate-on-scroll stagger-3">
-                        <span class="step-number">03</span>
-                        <div class="step-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
-                        </div>
-                        <h3 data-i18n="artist_step3_title">Grow your business</h3>
-                        <p data-i18n="artist_step3_text">Manage bookings, chat with clients, and build your reputation &mdash; all in one place.</p>
-                    </div>
+                <div class="trust-row">
+                    <div class="trust-item"><span class="check">&#10003;</span> <span data-i18n="trust_1">14-day money-back guarantee</span></div>
+                    <div class="trust-item"><span class="check">&#10003;</span> <span data-i18n="trust_2">Setup in under 30 minutes</span></div>
+                    <div class="trust-item"><span class="check">&#10003;</span> <span data-i18n="trust_3">Speaks English & Vietnamese</span></div>
                 </div>
             </div>
 
-            <!-- Client Tab -->
-            <div class="tab-content" id="tab-client">
-                <div class="steps-grid">
-                    <div class="step-card animate-on-scroll stagger-1">
-                        <span class="step-number">01</span>
-                        <div class="step-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="call-card">
+                    <div class="call-header">
+                        <div class="call-header-left">
+                            <div class="call-avatar">JV</div>
+                            <div class="call-info">
+                                <h4>Jovée Voice</h4>
+                                <span>Answering for Luxe Nails Spa</span>
+                            </div>
                         </div>
-                        <h3 data-i18n="client_step1_title">Browse local artists</h3>
-                        <p data-i18n="client_step1_text">Discover nail artists near you with real photos and reviews.</p>
+                        <div class="live-badge">
+                            <span class="live-dot"></span>
+                            LIVE
+                        </div>
                     </div>
-                    <div class="step-card animate-on-scroll stagger-2">
-                        <span class="step-number">02</span>
-                        <div class="step-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
+                    <div class="call-timer" id="call-timer">0:00</div>
+                    <div class="call-transcript">
+                        <div class="msg msg-caller">
+                            <div class="msg-label">Caller</div>
+                            Hi, do you have any openings tomorrow afternoon for a gel manicure?
                         </div>
-                        <h3 data-i18n="client_step2_title">Book instantly</h3>
-                        <p data-i18n="client_step2_text">See real availability and book without back-and-forth messaging.</p>
+                        <div class="msg msg-jovee">
+                            <div class="msg-label">Jovée</div>
+                            Of course! I have 2:30 PM or 4:15 PM available with Linh. Which works better?
+                        </div>
                     </div>
-                    <div class="step-card animate-on-scroll stagger-3">
-                        <span class="step-number">03</span>
-                        <div class="step-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/></svg>
-                        </div>
-                        <h3 data-i18n="client_step3_title">Show up confident</h3>
-                        <p data-i18n="client_step3_text">Know your artist, know your price, know your style &mdash; before you arrive.</p>
+                    <div class="call-waveform">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== WAVE DIVIDER ====== -->
-    <div class="wave-divider wave-divider-flip">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="var(--offwhite)">
-            <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z"/>
-        </svg>
-    </div>
-
-    <!-- ====== FEATURES ====== -->
-    <section class="features-section" id="features">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-eyebrow" data-i18n="feat_eyebrow">Built for you</div>
-                <h2 class="section-title" data-i18n="feat_title">Everything a nail artist needs to run their business.</h2>
+    <!-- PROBLEM SECTION -->
+    <section class="problem" id="problem">
+        <div class="problem-layout">
+            <div class="problem-container">
+                <div class="eyebrow animate-on-scroll">
+                    <span class="dot"></span>
+                    <span data-i18n="problem_eyebrow">THE HIDDEN COST</span>
+                </div>
+                <h2 class="animate-on-scroll" data-i18n="problem_h2">You're losing <em>$2,400 a month</em> in missed calls.</h2>
+                <div class="stats-row">
+                    <div class="stat-card animate-on-scroll delay-1">
+                        <div class="stat-number">62%</div>
+                        <div class="stat-label" data-i18n="stat_1">of calls to nail salons go unanswered during busy hours</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll delay-2">
+                        <div class="stat-number">$85</div>
+                        <div class="stat-label" data-i18n="stat_2">average revenue lost per missed call</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll delay-3">
+                        <div class="stat-number">28</div>
+                        <div class="stat-label" data-i18n="stat_3">missed calls per month for the average salon</div>
+                    </div>
+                </div>
+                <p class="problem-text animate-on-scroll" data-i18n="problem_text">Your phone rings while you're mid-manicure. You can't answer. That client calls the next salon on Google. It happens again tomorrow. And the day after. Jovée Voice answers every single call — instantly, professionally, in your client's language.</p>
             </div>
+            <div class="problem-video animate-on-scroll">
+                <video autoplay muted loop playsinline aria-hidden="true">
+                    <source src="assets/Painting Nails with Cellphone in the back .mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
 
-            <div class="features-grid">
-                <div class="feature-tile animate-on-scroll stagger-1">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
-                    </div>
-                    <h3 data-i18n="feat1_title">Map Discovery</h3>
-                    <p data-i18n="feat1_text">Clients find you by location, instantly.</p>
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <div class="eyebrow animate-on-scroll">
+                <span data-i18n="how_eyebrow">SIMPLE SETUP</span>
+            </div>
+            <h2 class="animate-on-scroll" data-i18n="how_h2">Live in 30 minutes. <em>Forever after that.</em></h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card animate-on-scroll delay-1">
+                <div class="step-number">01</div>
+                <h3 data-i18n="step1_title">Forward your salon line</h3>
+                <p data-i18n="step1_text">Point your existing phone number to Jovée Voice. No new hardware. No new number for your clients to learn.</p>
+            </div>
+            <div class="step-card animate-on-scroll delay-2">
+                <div class="step-number">02</div>
+                <h3 data-i18n="step2_title">We train her on your salon</h3>
+                <p data-i18n="step2_text">Services, prices, hours, staff names, policies. Jovée knows your business like a front-desk veteran.</p>
+            </div>
+            <div class="step-card animate-on-scroll delay-3">
+                <div class="step-number">03</div>
+                <h3 data-i18n="step3_title">She answers every call</h3>
+                <p data-i18n="step3_text">Books appointments, answers questions, sends text confirmations. You get a daily summary every morning.</p>
+            </div>
+        </div>
+        <div class="steps-video-row">
+            <div class="step-video-card animate-on-scroll delay-4">
+                <video autoplay muted loop playsinline aria-hidden="true">
+                    <source src="assets/Jovee Appointment confirmed .mp4" type="video/mp4">
+                </video>
+                <div class="step-video-label">Instant booking confirmation sent to your client</div>
+            </div>
+            <div class="step-video-card animate-on-scroll delay-5">
+                <video autoplay muted loop playsinline aria-hidden="true">
+                    <source src="assets/Audio Waves from Phone.mp4" type="video/mp4">
+                </video>
+                <div class="step-video-label">Jovée Voice handling a live call</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE DEMO -->
+    <section class="demo" id="demo">
+        <div class="demo-container">
+            <div class="section-header">
+                <div class="eyebrow animate-on-scroll">
+                    <span data-i18n="demo_eyebrow">HEAR IT FOR YOURSELF</span>
                 </div>
-                <div class="feature-tile animate-on-scroll stagger-2">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"/></svg>
+                <h2 class="animate-on-scroll" data-i18n="demo_h2">This is Jovée handling a <em>real call.</em></h2>
+            </div>
+            <div class="demo-video-wrapper animate-on-scroll">
+                <video autoplay muted loop playsinline aria-hidden="true">
+                    <source src="assets/Audio Waves from Phone.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="demo-player animate-on-scroll">
+                <audio controls preload="none">
+                    <source src="assets/demo-call.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="demo-transcript animate-on-scroll">
+                <div class="call-transcript">
+                    <div class="msg msg-caller">
+                        <div class="msg-label">Caller</div>
+                        Hi, I'd like to book a pedicure for this Saturday, around 11?
                     </div>
-                    <h3 data-i18n="feat2_title">Smart Booking</h3>
-                    <p data-i18n="feat2_text">Real-time availability. Zero scheduling chaos.</p>
+                    <div class="msg msg-jovee">
+                        <div class="msg-label">Jovée</div>
+                        I'd be happy to help! Let me check Saturday availability. I have 10:45 AM and 11:30 AM open. Would either of those work?
+                    </div>
+                    <div class="msg msg-caller">
+                        <div class="msg-label">Caller</div>
+                        11:30 is perfect. Do you do gel pedicures?
+                    </div>
+                    <div class="msg msg-jovee">
+                        <div class="msg-label">Jovée</div>
+                        Yes, we do! A gel pedicure is $55. I've booked you in for Saturday at 11:30 AM. You'll receive a text confirmation shortly. Is there anything else I can help with?
+                    </div>
                 </div>
-                <div class="feature-tile animate-on-scroll stagger-3">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>
-                    </div>
-                    <h3 data-i18n="feat3_title">Built-in Messaging</h3>
-                    <p data-i18n="feat3_text">Chat with clients without leaving the app.</p>
+            </div>
+            <p class="demo-note" data-i18n="demo_note">Recorded from an actual nail salon. Client names changed for privacy.</p>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <div class="eyebrow animate-on-scroll">
+                <span data-i18n="feat_eyebrow">WHAT SHE DOES</span>
+            </div>
+            <h2 class="animate-on-scroll" data-i18n="feat_h2">Everything a great receptionist does. <em>Plus things she can't.</em></h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll delay-1">
+                <div class="feature-icon">&#128222;</div>
+                <h3 data-i18n="feat1_title">Answers every call</h3>
+                <p data-i18n="feat1_text">Even at 11pm. Even during your busiest day. Zero missed calls.</p>
+            </div>
+            <div class="feature-card animate-on-scroll delay-2">
+                <div class="feature-icon">&#128197;</div>
+                <h3 data-i18n="feat2_title">Books real appointments</h3>
+                <p data-i18n="feat2_text">Syncs with your calendar. Checks availability. Confirms via text.</p>
+            </div>
+            <div class="feature-card animate-on-scroll delay-3">
+                <div class="feature-icon">&#127759;</div>
+                <h3 data-i18n="feat3_title">Speaks fluently</h3>
+                <p data-i18n="feat3_text">English, Vietnamese, Spanish. More on request.</p>
+            </div>
+            <div class="feature-card animate-on-scroll delay-4">
+                <div class="feature-icon">&#128172;</div>
+                <h3 data-i18n="feat4_title">Answers FAQs</h3>
+                <p data-i18n="feat4_text">Prices, hours, services, directions. Never gets flustered.</p>
+            </div>
+            <div class="feature-card animate-on-scroll delay-5">
+                <div class="feature-icon">&#128202;</div>
+                <h3 data-i18n="feat5_title">Daily call reports</h3>
+                <p data-i18n="feat5_text">See every call, every booking, every question — emailed each morning.</p>
+            </div>
+            <div class="feature-card animate-on-scroll delay-6">
+                <div class="feature-icon">&#128274;</div>
+                <h3 data-i18n="feat6_title">Sounds human</h3>
+                <p data-i18n="feat6_text">Your clients won't know they're talking to AI. We've tested it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING COMPARISON -->
+    <section class="pricing-compare" id="pricing">
+        <div class="section-header">
+            <div class="eyebrow animate-on-scroll">
+                <span data-i18n="compare_eyebrow">THE MATH IS OBVIOUS</span>
+            </div>
+            <h2 class="animate-on-scroll" data-i18n="compare_h2">A human receptionist costs $2,500/month. <em>Jovée starts at $149.</em></h2>
+        </div>
+        <div class="compare-table animate-on-scroll">
+            <div class="compare-row header">
+                <div class="compare-cell"></div>
+                <div class="compare-cell" data-i18n="compare_human">Human Receptionist</div>
+                <div class="compare-cell" data-i18n="compare_jovee">Jovée Voice</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell" data-i18n="compare_cost">Monthly cost</div>
+                <div class="compare-cell">$2,500+</div>
+                <div class="compare-cell highlight" data-i18n="compare_cost_jovee">From $149</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell" data-i18n="compare_hours">Hours covered</div>
+                <div class="compare-cell" data-i18n="compare_hours_human">40/week</div>
+                <div class="compare-cell highlight">24/7/365</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell" data-i18n="compare_sick">Sick days</div>
+                <div class="compare-cell" data-i18n="compare_sick_human">Yes</div>
+                <div class="compare-cell highlight" data-i18n="compare_sick_jovee">Never</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell" data-i18n="compare_lang">Multilingual</div>
+                <div class="compare-cell" data-i18n="compare_lang_human">Rarely</div>
+                <div class="compare-cell highlight" data-i18n="compare_lang_jovee">Always</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell" data-i18n="compare_setup">Setup time</div>
+                <div class="compare-cell" data-i18n="compare_setup_human">Weeks of training</div>
+                <div class="compare-cell highlight" data-i18n="compare_setup_jovee">30 minutes</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell" data-i18n="compare_volume">Call volume limit</div>
+                <div class="compare-cell" data-i18n="compare_volume_human">~50/day</div>
+                <div class="compare-cell highlight" data-i18n="compare_volume_jovee">Unlimited</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING TIERS -->
+    <section class="pricing">
+        <div class="pricing-grid">
+            <div class="pricing-card animate-on-scroll delay-1">
+                <h3 data-i18n="tier1_name">Starter</h3>
+                <div class="price">$149<span>/mo</span></div>
+                <div class="tier-desc" data-i18n="tier1_desc">Best for single-location salons</div>
+                <ul>
+                    <li data-i18n="tier1_f1">Up to 200 calls/month</li>
+                    <li data-i18n="tier1_f2">English + Vietnamese</li>
+                    <li data-i18n="tier1_f3">Text confirmations</li>
+                    <li data-i18n="tier1_f4">Daily reports</li>
+                </ul>
+                <a href="#book" class="btn-primary" data-i18n="tier_cta">Book a Demo Call</a>
+            </div>
+            <div class="pricing-card popular animate-on-scroll delay-2">
+                <div class="popular-badge" data-i18n="tier2_badge">MOST POPULAR</div>
+                <h3 data-i18n="tier2_name">Pro</h3>
+                <div class="price">$249<span>/mo</span></div>
+                <div class="tier-desc" data-i18n="tier2_desc">Best for growing salons</div>
+                <ul>
+                    <li data-i18n="tier2_f1">Up to 600 calls/month</li>
+                    <li data-i18n="tier2_f2">3 languages</li>
+                    <li data-i18n="tier2_f3">Calendar sync</li>
+                    <li data-i18n="tier2_f4">Custom greeting</li>
+                    <li data-i18n="tier2_f5">Priority support</li>
+                </ul>
+                <a href="#book" class="btn-primary" data-i18n="tier_cta">Book a Demo Call</a>
+            </div>
+            <div class="pricing-card animate-on-scroll delay-3">
+                <h3 data-i18n="tier3_name">Premium</h3>
+                <div class="price">$399<span>/mo</span></div>
+                <div class="tier-desc" data-i18n="tier3_desc">Best for multi-location or high-volume salons</div>
+                <ul>
+                    <li data-i18n="tier3_f1">Unlimited calls</li>
+                    <li data-i18n="tier3_f2">All languages</li>
+                    <li data-i18n="tier3_f3">Multi-location support</li>
+                    <li data-i18n="tier3_f4">Custom voice training</li>
+                    <li data-i18n="tier3_f5">Dedicated success manager</li>
+                </ul>
+                <a href="#book" class="btn-primary" data-i18n="tier_cta">Book a Demo Call</a>
+            </div>
+        </div>
+        <div class="pricing-guarantee animate-on-scroll">
+            <span data-i18n="guarantee_bold">14-day money-back guarantee</span> &middot; <span data-i18n="guarantee_rest">Cancel anytime &middot; No setup fees</span>
+        </div>
+        <div class="pricing-bottom-cta animate-on-scroll">
+            <a href="#book" class="btn-primary" data-i18n="hero_cta_primary">Book a Free Demo Call</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <div class="eyebrow animate-on-scroll">
+                <span data-i18n="faq_eyebrow">STRAIGHT ANSWERS</span>
+            </div>
+            <h2 class="animate-on-scroll" data-i18n="faq_h2">Questions? We've got <em>answers.</em></h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq1_q">Does it actually sound human?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner" data-i18n="faq1_a">Yes. We use the most advanced voice AI available. Listen to the demo above — most callers can't tell.</div>
                 </div>
-                <div class="feature-tile animate-on-scroll stagger-4">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                    </div>
-                    <h3 data-i18n="feat4_title">Reviews &amp; Ratings</h3>
-                    <p data-i18n="feat4_text">Build a reputation that brings clients back.</p>
+            </div>
+            <div class="faq-item animate-on-scroll delay-1">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq2_q">What if it messes up a booking?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner" data-i18n="faq2_a">You get full call transcripts and recordings. We flag any uncertain calls so you can review them before confirming.</div>
                 </div>
-                <div class="feature-tile animate-on-scroll stagger-5">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
-                    </div>
-                    <h3 data-i18n="feat5_title">Portfolio Display</h3>
-                    <p data-i18n="feat5_text">Link your Instagram and TikTok directly to your profile.</p>
+            </div>
+            <div class="faq-item animate-on-scroll delay-2">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq3_q">Can I customize what she says?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner" data-i18n="faq3_a">Completely. Greeting, services, prices, promotions, hours — all yours to shape.</div>
                 </div>
-                <div class="feature-tile animate-on-scroll stagger-6">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"/></svg>
-                    </div>
-                    <h3 data-i18n="feat6_title">Booking Alerts</h3>
-                    <p data-i18n="feat6_text">Instant notifications so you never miss a booking.</p>
+            </div>
+            <div class="faq-item animate-on-scroll delay-3">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq4_q">What about my existing phone number?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner" data-i18n="faq4_a">Keep it. We forward through your current line. Clients call the same number they always have.</div>
+                </div>
+            </div>
+            <div class="faq-item animate-on-scroll delay-4">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq5_q">How fast is setup?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner" data-i18n="faq5_a">Under 30 minutes on your kickoff call. Live the same day.</div>
+                </div>
+            </div>
+            <div class="faq-item animate-on-scroll delay-5">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq6_q">What if I don't like it?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner" data-i18n="faq6_a">14-day full money-back guarantee. No questions.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== WAVE DIVIDER ====== -->
-    <div class="wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="var(--blush-50)">
-            <path d="M0,20 C480,80 960,-20 1440,30 L1440,60 L0,60 Z"/>
-        </svg>
-    </div>
-
-    <!-- ====== TESTIMONIALS ====== -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-eyebrow" data-i18n="test_eyebrow">Real stories</div>
-                <h2 class="section-title" data-i18n="test_title">Built for nail artists. Tested by real nail techs.</h2>
+    <!-- JOVEE FAMILY -->
+    <section class="family">
+        <div class="section-header">
+            <div class="eyebrow animate-on-scroll">
+                <span data-i18n="family_eyebrow">PART OF THE JOVÉE FAMILY</span>
             </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll stagger-1">
-                    <div class="testimonial-quote-mark">&ldquo;</div>
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                    </div>
-                    <p class="testimonial-text" data-i18n="test1_text">&ldquo;Finally, an app that actually understands how nail artists work. My bookings went up the first week.&rdquo;</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar avatar-teal">LT</div>
-                        <div>
-                            <div class="testimonial-name">Linh T.</div>
-                            <div class="testimonial-location">Houston, TX</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card animate-on-scroll stagger-2">
-                    <div class="testimonial-quote-mark">&ldquo;</div>
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                    </div>
-                    <p class="testimonial-text" data-i18n="test2_text">&ldquo;I was tired of losing clients in my DMs. Jov&eacute;e Link fixed that completely.&rdquo;</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar avatar-blush">MR</div>
-                        <div>
-                            <div class="testimonial-name">Maya R.</div>
-                            <div class="testimonial-location">Atlanta, GA</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card animate-on-scroll stagger-3">
-                    <div class="testimonial-quote-mark">&ldquo;</div>
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
-                    </div>
-                    <p class="testimonial-text" data-i18n="test3_text">&ldquo;My clients love being able to see my portfolio before they even message me.&rdquo;</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar avatar-navy">SN</div>
-                        <div>
-                            <div class="testimonial-name">Sophia N.</div>
-                            <div class="testimonial-location">Dallas, TX</div>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="animate-on-scroll" data-i18n="family_h2">Jovée builds the tools nail salons <em>wish existed.</em></h2>
+        </div>
+        <div class="family-grid">
+            <div class="family-card current animate-on-scroll delay-1">
+                <img src="assets/logo-voice-dark.png" alt="Jovée Voice" class="family-logo">
+                <p data-i18n="family_voice">You're here. The AI receptionist that never misses a call.</p>
+            </div>
+            <div class="family-card animate-on-scroll delay-2">
+                <img src="assets/logo-link-dark.png" alt="Jovée Link" class="family-logo">
+                <p data-i18n="family_link">The modern booking app connecting clients with nail artists.</p>
+            </div>
+            <div class="family-card animate-on-scroll delay-3">
+                <img src="assets/logo-ar-dark.png" alt="Jovée AR" class="family-logo">
+                <p data-i18n="family_ar">Try on any nail color in real-time with your phone camera.</p>
             </div>
         </div>
     </section>
 
-    <!-- ====== DOWNLOAD CTA ====== -->
-    <section class="download-section" id="download">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll" data-i18n="dl_title">Your next client is already looking for you.</h2>
-            <p class="download-subtitle animate-on-scroll stagger-1" data-i18n="dl_subtitle">Join nail artists already using Jov&eacute;e Link to grow their business.</p>
-
-            <div class="download-ctas animate-on-scroll stagger-2">
-                <a href="#" class="btn-store-light" aria-label="Download on App Store">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                    <span class="btn-store-text">
-                        <small data-i18n="store_apple_sub">Download on the</small>
-                        <strong>App Store</strong>
-                    </span>
-                </a>
-                <a href="#" class="btn-store-light" aria-label="Get it on Google Play">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199 2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.395 12l2.303-2.492zM5.864 2.658l10.937 6.333-2.302 2.302L5.864 2.658z"/></svg>
-                    <span class="btn-store-text">
-                        <small data-i18n="store_google_sub">Get it on</small>
-                        <strong>Google Play</strong>
-                    </span>
-                </a>
-            </div>
-            <p class="download-note animate-on-scroll stagger-3" data-i18n="dl_note">Free to download. Available on iOS and Android.</p>
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="book">
+        <div class="final-cta-container">
+            <h2 class="animate-on-scroll" data-i18n="final_h2">Your next missed call just walked into <em>another salon.</em></h2>
+            <p class="sub animate-on-scroll" data-i18n="final_sub">Stop losing clients to a silent phone line. Book a 15-minute call — we'll show you Jovée Voice live with your actual salon info.</p>
+            <a href="#book" class="btn-primary animate-on-scroll" data-i18n="final_cta">Book My Free Demo Call</a>
+            <p class="fine-print animate-on-scroll" data-i18n="final_fine">No pressure. No credit card. Just a quick look at what's possible.</p>
         </div>
     </section>
 
-    <!-- ====== FOOTER ====== -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="assets/logo-white.png" alt="Jovée Link" class="footer-logo">
-                    <p class="footer-lang-note" data-i18n="footer_lang_note">Available in English and Vietnamese</p>
-                </div>
-
-                <nav class="footer-links">
-                    <a href="#" data-i18n="footer_about">About</a>
-                    <a href="#" data-i18n="footer_artists">For Artists</a>
-                    <a href="#" data-i18n="footer_clients">For Clients</a>
-                    <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
-                    <a href="#" data-i18n="footer_terms">Terms of Service</a>
-                </nav>
-
-                <div class="footer-social">
-                    <a href="#" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-                    </a>
-                    <a href="#" aria-label="TikTok">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78c.27 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 10.86 4.48 6.3 6.3 0 0 0 1.86-4.49V8.65a8.28 8.28 0 0 0 4.83 1.56V6.76a4.84 4.84 0 0 1-1.11-.07z"/></svg>
-                    </a>
-                    <a href="#" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                </div>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo" aria-label="Jovée Voice home">
+                    <img src="assets/logo-voice-white.png" alt="Jovée Voice" style="height: 48px;">
+                </a>
+                <p class="footer-tagline" data-i18n="footer_tagline">The AI receptionist built for nail salons.</p>
+                <p class="footer-lang-note" data-i18n="footer_lang">Available in English and Vietnamese</p>
             </div>
-
-            <div class="footer-bottom">
-                <p class="footer-copy">&copy; 2025 Jov&eacute;e Link. All rights reserved.</p>
-                <div class="lang-toggle" role="group" aria-label="Language">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="vi">VI</button>
-                </div>
+            <div class="footer-links">
+                <a href="#" data-i18n="footer_about">About</a>
+                <a href="#" data-i18n="footer_salons">For Salons</a>
+                <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+                <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                <a href="#" data-i18n="footer_contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 Jovée. All rights reserved.</span>
+            <div class="lang-toggle" role="group" aria-label="Language">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="vi">VI</button>
             </div>
         </div>
     </footer>
 
-    <!-- ====== JAVASCRIPT ====== -->
+    <!-- JAVASCRIPT -->
     <script>
-    (function() {
-        'use strict';
-
-        /* ==========================================
-           TRANSLATIONS
-           ========================================== */
+        // TRANSLATIONS
         var translations = {
             en: {
-                nav_cta: 'Get the App',
-                nav_how: 'How it works',
+                nav_how: 'How It Works',
                 nav_features: 'Features',
-                nav_testimonials: 'Testimonials',
-                hero_eyebrow: 'The future of nail bookings',
-                hero_h1_1: 'Nails.',
-                hero_h1_2: 'Connected.',
-                hero_sub: 'Find nail artists near you. Book instantly. No DMs. No guessing.',
-                store_apple_sub: 'Download on the',
-                store_google_sub: 'Get it on',
-                hero_proof: 'Trusted by nail artists across the U.S.',
-                phone_title: 'Discover Artists',
-                phone_search: 'Search by style, location...',
-                pain_text: 'Still managing bookings through <span>Instagram DMs</span>? There\u2019s a better way.',
-                how_eyebrow: 'Step by step',
-                how_title: 'How it works',
-                how_subtitle: 'Simple for clients. Powerful for artists.',
-                tab_artist: "I'm a Nail Artist",
-                tab_client: "I'm a Client",
-                artist_step1_title: 'Create your profile',
-                artist_step1_text: 'Set up your services, prices, availability, and portfolio in minutes.',
-                artist_step2_title: 'Get discovered',
-                artist_step2_text: 'Clients near you find your profile on the map. No more waiting for DMs.',
-                artist_step3_title: 'Grow your business',
-                artist_step3_text: 'Manage bookings, chat with clients, and build your reputation \u2014 all in one place.',
-                client_step1_title: 'Browse local artists',
-                client_step1_text: 'Discover nail artists near you with real photos and reviews.',
-                client_step2_title: 'Book instantly',
-                client_step2_text: 'See real availability and book without back-and-forth messaging.',
-                client_step3_title: 'Show up confident',
-                client_step3_text: 'Know your artist, know your price, know your style \u2014 before you arrive.',
-                feat_eyebrow: 'Built for you',
-                feat_title: 'Everything a nail artist needs to run their business.',
-                feat1_title: 'Map Discovery',
-                feat1_text: 'Clients find you by location, instantly.',
-                feat2_title: 'Smart Booking',
-                feat2_text: 'Real-time availability. Zero scheduling chaos.',
-                feat3_title: 'Built-in Messaging',
-                feat3_text: 'Chat with clients without leaving the app.',
-                feat4_title: 'Reviews & Ratings',
-                feat4_text: 'Build a reputation that brings clients back.',
-                feat5_title: 'Portfolio Display',
-                feat5_text: 'Link your Instagram and TikTok directly to your profile.',
-                feat6_title: 'Booking Alerts',
-                feat6_text: 'Instant notifications so you never miss a booking.',
-                test_eyebrow: 'Real stories',
-                test_title: 'Built for nail artists. Tested by real nail techs.',
-                test1_text: '\u201CFinally, an app that actually understands how nail artists work. My bookings went up the first week.\u201D',
-                test2_text: '\u201CI was tired of losing clients in my DMs. Jov\u00E9e Link fixed that completely.\u201D',
-                test3_text: '\u201CMy clients love being able to see my portfolio before they even message me.\u201D',
-                dl_title: 'Your next client is already looking for you.',
-                dl_subtitle: 'Join nail artists already using Jov\u00E9e Link to grow their business.',
-                dl_note: 'Free to download. Available on iOS and Android.',
-                footer_lang_note: 'Available in English and Vietnamese',
+                nav_pricing: 'Pricing',
+                nav_faq: 'FAQ',
+                nav_cta: 'Book a Demo Call',
+                hero_eyebrow: 'NEW \u2014 AI RECEPTIONIST FOR NAIL SALONS',
+                hero_h1: 'Never miss another <em>booking.</em>',
+                hero_sub: 'Jov\u00E9e Voice answers every call, books every appointment, and speaks your clients\u2019 language \u2014 24/7. Built for nail salons. Starting at $149/month.',
+                hero_cta_primary: 'Book a Free Demo Call',
+                hero_cta_secondary: '<svg class="play-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="4,2 14,8 4,14" fill="currentColor" stroke="none"/></svg> Hear It In Action',
+                trust_1: '14-day money-back guarantee',
+                trust_2: 'Setup in under 30 minutes',
+                trust_3: 'Speaks English & Vietnamese',
+                problem_eyebrow: 'THE HIDDEN COST',
+                problem_h2: 'You\u2019re losing <em>$2,400 a month</em> in missed calls.',
+                stat_1: 'of calls to nail salons go unanswered during busy hours',
+                stat_2: 'average revenue lost per missed call',
+                stat_3: 'missed calls per month for the average salon',
+                problem_text: 'Your phone rings while you\u2019re mid-manicure. You can\u2019t answer. That client calls the next salon on Google. It happens again tomorrow. And the day after. Jov\u00E9e Voice answers every single call \u2014 instantly, professionally, in your client\u2019s language.',
+                how_eyebrow: 'SIMPLE SETUP',
+                how_h2: 'Live in 30 minutes. <em>Forever after that.</em>',
+                step1_title: 'Forward your salon line',
+                step1_text: 'Point your existing phone number to Jov\u00E9e Voice. No new hardware. No new number for your clients to learn.',
+                step2_title: 'We train her on your salon',
+                step2_text: 'Services, prices, hours, staff names, policies. Jov\u00E9e knows your business like a front-desk veteran.',
+                step3_title: 'She answers every call',
+                step3_text: 'Books appointments, answers questions, sends text confirmations. You get a daily summary every morning.',
+                demo_eyebrow: 'HEAR IT FOR YOURSELF',
+                demo_h2: 'This is Jov\u00E9e handling a <em>real call.</em>',
+                demo_note: 'Recorded from an actual nail salon. Client names changed for privacy.',
+                feat_eyebrow: 'WHAT SHE DOES',
+                feat_h2: 'Everything a great receptionist does. <em>Plus things she can\u2019t.</em>',
+                feat1_title: 'Answers every call',
+                feat1_text: 'Even at 11pm. Even during your busiest day. Zero missed calls.',
+                feat2_title: 'Books real appointments',
+                feat2_text: 'Syncs with your calendar. Checks availability. Confirms via text.',
+                feat3_title: 'Speaks fluently',
+                feat3_text: 'English, Vietnamese, Spanish. More on request.',
+                feat4_title: 'Answers FAQs',
+                feat4_text: 'Prices, hours, services, directions. Never gets flustered.',
+                feat5_title: 'Daily call reports',
+                feat5_text: 'See every call, every booking, every question \u2014 emailed each morning.',
+                feat6_title: 'Sounds human',
+                feat6_text: 'Your clients won\u2019t know they\u2019re talking to AI. We\u2019ve tested it.',
+                compare_eyebrow: 'THE MATH IS OBVIOUS',
+                compare_h2: 'A human receptionist costs $2,500/month. <em>Jov\u00E9e starts at $149.</em>',
+                compare_human: 'Human Receptionist',
+                compare_jovee: 'Jov\u00E9e Voice',
+                compare_cost: 'Monthly cost',
+                compare_cost_jovee: 'From $149',
+                compare_hours: 'Hours covered',
+                compare_hours_human: '40/week',
+                compare_sick: 'Sick days',
+                compare_sick_human: 'Yes',
+                compare_sick_jovee: 'Never',
+                compare_lang: 'Multilingual',
+                compare_lang_human: 'Rarely',
+                compare_lang_jovee: 'Always',
+                compare_setup: 'Setup time',
+                compare_setup_human: 'Weeks of training',
+                compare_setup_jovee: '30 minutes',
+                compare_volume: 'Call volume limit',
+                compare_volume_human: '~50/day',
+                compare_volume_jovee: 'Unlimited',
+                tier1_name: 'Starter',
+                tier1_desc: 'Best for single-location salons',
+                tier1_f1: 'Up to 200 calls/month',
+                tier1_f2: 'English + Vietnamese',
+                tier1_f3: 'Text confirmations',
+                tier1_f4: 'Daily reports',
+                tier2_badge: 'MOST POPULAR',
+                tier2_name: 'Pro',
+                tier2_desc: 'Best for growing salons',
+                tier2_f1: 'Up to 600 calls/month',
+                tier2_f2: '3 languages',
+                tier2_f3: 'Calendar sync',
+                tier2_f4: 'Custom greeting',
+                tier2_f5: 'Priority support',
+                tier3_name: 'Premium',
+                tier3_desc: 'Best for multi-location or high-volume salons',
+                tier3_f1: 'Unlimited calls',
+                tier3_f2: 'All languages',
+                tier3_f3: 'Multi-location support',
+                tier3_f4: 'Custom voice training',
+                tier3_f5: 'Dedicated success manager',
+                tier_cta: 'Book a Demo Call',
+                guarantee_bold: '14-day money-back guarantee',
+                guarantee_rest: 'Cancel anytime \u00B7 No setup fees',
+                faq_eyebrow: 'STRAIGHT ANSWERS',
+                faq_h2: 'Questions? We\u2019ve got <em>answers.</em>',
+                faq1_q: 'Does it actually sound human?',
+                faq1_a: 'Yes. We use the most advanced voice AI available. Listen to the demo above \u2014 most callers can\u2019t tell.',
+                faq2_q: 'What if it messes up a booking?',
+                faq2_a: 'You get full call transcripts and recordings. We flag any uncertain calls so you can review them before confirming.',
+                faq3_q: 'Can I customize what she says?',
+                faq3_a: 'Completely. Greeting, services, prices, promotions, hours \u2014 all yours to shape.',
+                faq4_q: 'What about my existing phone number?',
+                faq4_a: 'Keep it. We forward through your current line. Clients call the same number they always have.',
+                faq5_q: 'How fast is setup?',
+                faq5_a: 'Under 30 minutes on your kickoff call. Live the same day.',
+                faq6_q: 'What if I don\u2019t like it?',
+                faq6_a: '14-day full money-back guarantee. No questions.',
+                family_eyebrow: 'PART OF THE JOV\u00C9E FAMILY',
+                family_h2: 'Jov\u00E9e builds the tools nail salons <em>wish existed.</em>',
+                family_voice: 'You\u2019re here. The AI receptionist that never misses a call.',
+                family_link: 'The modern booking app connecting clients with nail artists.',
+                family_ar: 'Try on any nail color in real-time with your phone camera.',
+                final_h2: 'Your next missed call just walked into <em>another salon.</em>',
+                final_sub: 'Stop losing clients to a silent phone line. Book a 15-minute call \u2014 we\u2019ll show you Jov\u00E9e Voice live with your actual salon info.',
+                final_cta: 'Book My Free Demo Call',
+                final_fine: 'No pressure. No credit card. Just a quick look at what\u2019s possible.',
+                footer_tagline: 'The AI receptionist built for nail salons.',
+                footer_lang: 'Available in English and Vietnamese',
                 footer_about: 'About',
-                footer_artists: 'For Artists',
-                footer_clients: 'For Clients',
+                footer_salons: 'For Salons',
                 footer_privacy: 'Privacy Policy',
-                footer_terms: 'Terms of Service'
+                footer_terms: 'Terms of Service',
+                footer_contact: 'Contact'
             },
             vi: {
-                nav_cta: 'T\u1EA3i \u1EE8ng d\u1EE5ng',
-                nav_how: 'C\u00E1ch ho\u1EA1t \u0111\u1ED9ng',
-                nav_features: 'T\u00EDnh n\u0103ng',
-                nav_testimonials: '\u0110\u00E1nh gi\u00E1',
-                hero_eyebrow: 'T\u01B0\u01A1ng lai c\u1EE7a \u0111\u1EB7t l\u1ECBch l\u00E0m n\u00E1il',
-                hero_h1_1: 'N\u00E1il.',
-                hero_h1_2: 'K\u1EBFt n\u1ED1i.',
-                hero_sub: 'T\u00ECm th\u1EE3 l\u00E0m n\u00E1il g\u1EA7n b\u1EA1n. \u0110\u1EB7t l\u1ECBch ngay. Kh\u00F4ng c\u1EA7n nh\u1EAFn tin. Kh\u00F4ng c\u1EA7n \u0111o\u00E1n.',
-                store_apple_sub: 'T\u1EA3i v\u1EC1 tr\u00EAn',
-                store_google_sub: 'T\u1EA3i tr\u00EAn',
-                hero_proof: '\u0110\u01B0\u1EE3c c\u00E1c th\u1EE3 n\u00E1il tr\u00EAn to\u00E0n n\u01B0\u1EDBc M\u1EF9 tin d\u00F9ng.',
-                phone_title: 'Kh\u00E1m ph\u00E1 Th\u1EE3 n\u00E1il',
-                phone_search: 'T\u00ECm theo phong c\u00E1ch, v\u1ECB tr\u00ED...',
-                pain_text: 'V\u1EABn qu\u1EA3n l\u00FD l\u1ECBch h\u1EB9n qua <span>tin nh\u1EAFn Instagram</span>? C\u00F3 c\u00E1ch t\u1ED1t h\u01A1n.',
-                how_eyebrow: 'T\u1EEBng b\u01B0\u1EDBc',
-                how_title: 'C\u00E1ch ho\u1EA1t \u0111\u1ED9ng',
-                how_subtitle: '\u0110\u01A1n gi\u1EA3n cho kh\u00E1ch. M\u1EA1nh m\u1EBD cho th\u1EE3 n\u00E1il.',
-                tab_artist: 'T\u00F4i l\u00E0 Th\u1EE3 N\u00E1il',
-                tab_client: 'T\u00F4i l\u00E0 Kh\u00E1ch h\u00E0ng',
-                artist_step1_title: 'T\u1EA1o h\u1ED3 s\u01A1',
-                artist_step1_text: 'Thi\u1EBFt l\u1EADp d\u1ECBch v\u1EE5, gi\u00E1 c\u1EA3, l\u1ECBch tr\u1ED1ng v\u00E0 portfolio ch\u1EC9 trong v\u00E0i ph\u00FAt.',
-                artist_step2_title: '\u0110\u01B0\u1EE3c kh\u00E1m ph\u00E1',
-                artist_step2_text: 'Kh\u00E1ch h\u00E0ng g\u1EA7n b\u1EA1n t\u00ECm th\u1EA5y h\u1ED3 s\u01A1 c\u1EE7a b\u1EA1n tr\u00EAn b\u1EA3n \u0111\u1ED3. Kh\u00F4ng c\u1EA7n ch\u1EDD tin nh\u1EAFn.',
-                artist_step3_title: 'Ph\u00E1t tri\u1EC3n kinh doanh',
-                artist_step3_text: 'Qu\u1EA3n l\u00FD l\u1ECBch h\u1EB9n, tr\u00F2 chuy\u1EC7n v\u1EDBi kh\u00E1ch v\u00E0 x\u00E2y d\u1EF1ng uy t\u00EDn \u2014 t\u1EA5t c\u1EA3 trong m\u1ED9t \u1EE9ng d\u1EE5ng.',
-                client_step1_title: 'Duy\u1EC7t th\u1EE3 n\u00E1il g\u1EA7n \u0111\u00E2y',
-                client_step1_text: 'Kh\u00E1m ph\u00E1 th\u1EE3 n\u00E1il g\u1EA7n b\u1EA1n v\u1EDBi \u1EA3nh th\u1EADt v\u00E0 \u0111\u00E1nh gi\u00E1.',
-                client_step2_title: '\u0110\u1EB7t l\u1ECBch ngay',
-                client_step2_text: 'Xem l\u1ECBch tr\u1ED1ng th\u1EF1c t\u1EBF v\u00E0 \u0111\u1EB7t l\u1ECBch kh\u00F4ng c\u1EA7n nh\u1EAFn tin qua l\u1EA1i.',
-                client_step3_title: 'T\u1EF1 tin \u0111\u1EBFn ti\u1EC7m',
-                client_step3_text: 'Bi\u1EBFt th\u1EE3 n\u00E1il, bi\u1EBFt gi\u00E1, bi\u1EBFt phong c\u00E1ch \u2014 tr\u01B0\u1EDBc khi \u0111\u1EBFn.',
-                feat_eyebrow: 'D\u00E0nh cho b\u1EA1n',
-                feat_title: 'M\u1ECDi th\u1EE9 th\u1EE3 n\u00E1il c\u1EA7n \u0111\u1EC3 v\u1EADn h\u00E0nh c\u00F4ng vi\u1EC7c.',
-                feat1_title: 'B\u1EA3n \u0111\u1ED3 Kh\u00E1m ph\u00E1',
-                feat1_text: 'Kh\u00E1ch h\u00E0ng t\u00ECm b\u1EA1n theo v\u1ECB tr\u00ED, ngay l\u1EADp t\u1EE9c.',
-                feat2_title: '\u0110\u1EB7t l\u1ECBch Th\u00F4ng minh',
-                feat2_text: 'L\u1ECBch tr\u1ED1ng th\u1EF1c t\u1EBF. Kh\u00F4ng l\u1ED9n x\u1ED9n l\u1ECBch h\u1EB9n.',
-                feat3_title: 'Nh\u1EAFn tin T\u00EDch h\u1EE3p',
-                feat3_text: 'Tr\u00F2 chuy\u1EC7n v\u1EDBi kh\u00E1ch ngay trong \u1EE9ng d\u1EE5ng.',
-                feat4_title: '\u0110\u00E1nh gi\u00E1 & X\u1EBFp h\u1EA1ng',
-                feat4_text: 'X\u00E2y d\u1EF1ng uy t\u00EDn \u0111\u1EC3 kh\u00E1ch quay l\u1EA1i.',
-                feat5_title: 'Hi\u1EC3n th\u1ECB Portfolio',
-                feat5_text: 'Li\u00EAn k\u1EBFt Instagram v\u00E0 TikTok tr\u1EF1c ti\u1EBFp v\u00E0o h\u1ED3 s\u01A1.',
-                feat6_title: 'Th\u00F4ng b\u00E1o \u0110\u1EB7t l\u1ECBch',
-                feat6_text: 'Th\u00F4ng b\u00E1o t\u1EE9c th\u00EC \u0111\u1EC3 kh\u00F4ng b\u1ECF l\u1EE1 l\u1ECBch h\u1EB9n n\u00E0o.',
-                test_eyebrow: 'C\u00E2u chuy\u1EC7n th\u1EF1c',
-                test_title: 'X\u00E2y d\u1EF1ng cho th\u1EE3 n\u00E1il. \u0110\u01B0\u1EE3c ki\u1EC3m ch\u1EE9ng b\u1EDFi th\u1EE3 n\u00E1il th\u1EF1c t\u1EBF.',
-                test1_text: '\u201CCu\u1ED1i c\u00F9ng c\u0169ng c\u00F3 m\u1ED9t \u1EE9ng d\u1EE5ng th\u1EF1c s\u1EF1 hi\u1EC3u c\u00E1ch th\u1EE3 n\u00E1il l\u00E0m vi\u1EC7c. L\u1ECBch h\u1EB9n c\u1EE7a t\u00F4i t\u0103ng ngay tu\u1EA7n \u0111\u1EA7u ti\u00EAn.\u201D',
-                test2_text: '\u201CT\u00F4i ch\u00E1n vi\u1EC7c m\u1EA5t kh\u00E1ch trong tin nh\u1EAFn r\u1ED3i. Jov\u00E9e Link \u0111\u00E3 gi\u1EA3i quy\u1EBFt ho\u00E0n to\u00E0n.\u201D',
-                test3_text: '\u201CKh\u00E1ch c\u1EE7a t\u00F4i th\u00EDch \u0111\u01B0\u1EE3c xem portfolio tr\u01B0\u1EDBc khi li\u00EAn h\u1EC7.\u201D',
-                dl_title: 'Kh\u00E1ch h\u00E0ng ti\u1EBFp theo \u0111ang t\u00ECm b\u1EA1n.',
-                dl_subtitle: 'Tham gia c\u00F9ng c\u00E1c th\u1EE3 n\u00E1il \u0111ang d\u00F9ng Jov\u00E9e Link \u0111\u1EC3 ph\u00E1t tri\u1EC3n kinh doanh.',
-                dl_note: 'Mi\u1EC5n ph\u00ED t\u1EA3i v\u1EC1. C\u00F3 s\u1EB5n tr\u00EAn iOS v\u00E0 Android.',
-                footer_lang_note: 'C\u00F3 s\u1EB5n b\u1EB1ng Ti\u1EBFng Anh v\u00E0 Ti\u1EBFng Vi\u1EC7t',
+                nav_how: 'C\u00E1ch Ho\u1EA1t \u0110\u1ED9ng',
+                nav_features: 'T\u00EDnh N\u0103ng',
+                nav_pricing: 'B\u1EA3ng Gi\u00E1',
+                nav_faq: 'C\u00E2u H\u1ECFi',
+                nav_cta: '\u0110\u1EB7t L\u1ECBch Demo',
+                hero_eyebrow: 'M\u1EDAI \u2014 L\u1EC4 T\u00C2N AI CHO TI\u1EC6M NAIL',
+                hero_h1: 'Kh\u00F4ng bao gi\u1EDD b\u1ECF l\u1EE1 <em>l\u1ECBch h\u1EB9n.</em>',
+                hero_sub: 'Jov\u00E9e Voice tr\u1EA3 l\u1EDDi m\u1ECDi cu\u1ED9c g\u1ECDi, \u0111\u1EB7t m\u1ECDi l\u1ECBch h\u1EB9n, v\u00E0 n\u00F3i ng\u00F4n ng\u1EEF c\u1EE7a kh\u00E1ch h\u00E0ng \u2014 24/7. D\u00E0nh ri\u00EAng cho ti\u1EC7m nail. T\u1EEB $149/th\u00E1ng.',
+                hero_cta_primary: '\u0110\u1EB7t L\u1ECBch Demo Mi\u1EC5n Ph\u00ED',
+                hero_cta_secondary: '<svg class="play-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="4,2 14,8 4,14" fill="currentColor" stroke="none"/></svg> Nghe Th\u1EED',
+                trust_1: '\u0110\u1EA3m b\u1EA3o ho\u00E0n ti\u1EC1n 14 ng\u00E0y',
+                trust_2: 'C\u00E0i \u0111\u1EB7t trong 30 ph\u00FAt',
+                trust_3: 'N\u00F3i ti\u1EBFng Anh & ti\u1EBFng Vi\u1EC7t',
+                problem_eyebrow: 'CHI PH\u00CD \u1EA8N',
+                problem_h2: 'B\u1EA1n \u0111ang m\u1EA5t <em>$2,400 m\u1ED7i th\u00E1ng</em> v\u00EC cu\u1ED9c g\u1ECDi nh\u1EE1.',
+                stat_1: 'cu\u1ED9c g\u1ECDi \u0111\u1EBFn ti\u1EC7m nail kh\u00F4ng \u0111\u01B0\u1EE3c tr\u1EA3 l\u1EDDi trong gi\u1EDD cao \u0111i\u1EC3m',
+                stat_2: 'doanh thu trung b\u00ECnh m\u1EA5t m\u1ED7i cu\u1ED9c g\u1ECDi nh\u1EE1',
+                stat_3: 'cu\u1ED9c g\u1ECDi nh\u1EE1 m\u1ED7i th\u00E1ng cho ti\u1EC7m trung b\u00ECnh',
+                problem_text: '\u0110i\u1EC7n tho\u1EA1i reo khi b\u1EA1n \u0111ang l\u00E0m m\u00F3ng. B\u1EA1n kh\u00F4ng th\u1EC3 tr\u1EA3 l\u1EDDi. Kh\u00E1ch h\u00E0ng g\u1ECDi cho ti\u1EC7m k\u1EBF b\u00EAn. Chuy\u1EC7n n\u00E0y l\u1EB7p l\u1EA1i m\u1ED7i ng\u00E0y. Jov\u00E9e Voice tr\u1EA3 l\u1EDDi m\u1ECDi cu\u1ED9c g\u1ECDi \u2014 ngay l\u1EADp t\u1EE9c, chuy\u00EAn nghi\u1EC7p, b\u1EB1ng ng\u00F4n ng\u1EEF c\u1EE7a kh\u00E1ch.',
+                how_eyebrow: 'C\u00C0I \u0110\u1EB6T \u0110\u01A0N GI\u1EA2N',
+                how_h2: 'Ho\u1EA1t \u0111\u1ED9ng trong 30 ph\u00FAt. <em>M\u00E3i m\u00E3i sau \u0111\u00F3.</em>',
+                step1_title: 'Chuy\u1EC3n ti\u1EBFp s\u1ED1 \u0111i\u1EC7n tho\u1EA1i',
+                step1_text: 'Ch\u1EC9 c\u1EA7n chuy\u1EC3n ti\u1EBFp s\u1ED1 hi\u1EC7n t\u1EA1i sang Jov\u00E9e Voice. Kh\u00F4ng c\u1EA7n thi\u1EBFt b\u1ECB m\u1EDBi.',
+                step2_title: 'Ch\u00FAng t\u00F4i hu\u1EA5n luy\u1EC7n cho ti\u1EC7m b\u1EA1n',
+                step2_text: 'D\u1ECBch v\u1EE5, gi\u00E1 c\u1EA3, gi\u1EDD l\u00E0m vi\u1EC7c, t\u00EAn nh\u00E2n vi\u00EAn. Jov\u00E9e bi\u1EBFt ti\u1EC7m b\u1EA1n nh\u01B0 nh\u00E2n vi\u00EAn l\u00E2u n\u0103m.',
+                step3_title: 'C\u00F4 \u1EA5y tr\u1EA3 l\u1EDDi m\u1ECDi cu\u1ED9c g\u1ECDi',
+                step3_text: '\u0110\u1EB7t l\u1ECBch h\u1EB9n, tr\u1EA3 l\u1EDDi c\u00E2u h\u1ECFi, g\u1EEDi x\u00E1c nh\u1EADn tin nh\u1EAFn. B\u1EA1n nh\u1EADn b\u00E1o c\u00E1o h\u00E0ng ng\u00E0y m\u1ED7i s\u00E1ng.',
+                demo_eyebrow: 'NGHE TH\u1EEC NGAY',
+                demo_h2: '\u0110\u00E2y l\u00E0 Jov\u00E9e x\u1EED l\u00FD <em>cu\u1ED9c g\u1ECDi th\u1EF1c.</em>',
+                demo_note: 'Ghi \u00E2m t\u1EEB ti\u1EC7m nail th\u1EF1c t\u1EBF. T\u00EAn kh\u00E1ch \u0111\u00E3 \u0111\u01B0\u1EE3c thay \u0111\u1ED5i.',
+                feat_eyebrow: 'T\u00CDNH N\u0102NG',
+                feat_h2: 'T\u1EA5t c\u1EA3 nh\u1EEFng g\u00EC l\u1EC5 t\u00E2n gi\u1ECFi l\u00E0m. <em>C\u1ED9ng th\u00EAm nh\u1EEFng g\u00EC h\u1ECD kh\u00F4ng th\u1EC3.</em>',
+                feat1_title: 'Tr\u1EA3 l\u1EDDi m\u1ECDi cu\u1ED9c g\u1ECDi',
+                feat1_text: 'K\u1EC3 c\u1EA3 l\u00FAc 11 \u0111\u00EAm. K\u1EC3 c\u1EA3 ng\u00E0y b\u1EADn nh\u1EA5t. Kh\u00F4ng b\u1ECF l\u1EE1 cu\u1ED9c g\u1ECDi n\u00E0o.',
+                feat2_title: '\u0110\u1EB7t l\u1ECBch h\u1EB9n th\u1EF1c',
+                feat2_text: '\u0110\u1ED3ng b\u1ED9 l\u1ECBch. Ki\u1EC3m tra ch\u1ED7 tr\u1ED1ng. X\u00E1c nh\u1EADn qua tin nh\u1EAFn.',
+                feat3_title: 'N\u00F3i l\u01B0u lo\u00E1t',
+                feat3_text: 'Ti\u1EBFng Anh, ti\u1EBFng Vi\u1EC7t, ti\u1EBFng T\u00E2y Ban Nha. Th\u00EAm theo y\u00EAu c\u1EA7u.',
+                feat4_title: 'Tr\u1EA3 l\u1EDDi c\u00E2u h\u1ECFi th\u01B0\u1EDDng g\u1EB7p',
+                feat4_text: 'Gi\u00E1, gi\u1EDD, d\u1ECBch v\u1EE5, ch\u1EC9 \u0111\u01B0\u1EDDng. Kh\u00F4ng bao gi\u1EDD l\u00FAng t\u00FAng.',
+                feat5_title: 'B\u00E1o c\u00E1o cu\u1ED9c g\u1ECDi h\u00E0ng ng\u00E0y',
+                feat5_text: 'Xem m\u1ECDi cu\u1ED9c g\u1ECDi, m\u1ECDi l\u1ECBch h\u1EB9n \u2014 g\u1EEDi email m\u1ED7i s\u00E1ng.',
+                feat6_title: 'Nghe nh\u01B0 ng\u01B0\u1EDDi th\u1EADt',
+                feat6_text: 'Kh\u00E1ch h\u00E0ng s\u1EBD kh\u00F4ng bi\u1EBFt h\u1ECD \u0111ang n\u00F3i chuy\u1EC7n v\u1EDBi AI.',
+                compare_eyebrow: 'TO\u00C1N H\u1ECCC R\u00D5 R\u00C0NG',
+                compare_h2: 'L\u1EC5 t\u00E2n t\u1ED1n $2,500/th\u00E1ng. <em>Jov\u00E9e ch\u1EC9 t\u1EEB $149.</em>',
+                compare_human: 'L\u1EC5 T\u00E2n',
+                compare_jovee: 'Jov\u00E9e Voice',
+                compare_cost: 'Chi ph\u00ED/th\u00E1ng',
+                compare_cost_jovee: 'T\u1EEB $149',
+                compare_hours: 'Gi\u1EDD l\u00E0m vi\u1EC7c',
+                compare_hours_human: '40/tu\u1EA7n',
+                compare_sick: 'Ngh\u1EC9 \u1ED1m',
+                compare_sick_human: 'C\u00F3',
+                compare_sick_jovee: 'Kh\u00F4ng bao gi\u1EDD',
+                compare_lang: '\u0110a ng\u00F4n ng\u1EEF',
+                compare_lang_human: 'Hi\u1EBFm',
+                compare_lang_jovee: 'Lu\u00F4n lu\u00F4n',
+                compare_setup: 'Th\u1EDDi gian c\u00E0i \u0111\u1EB7t',
+                compare_setup_human: 'Nhi\u1EC1u tu\u1EA7n',
+                compare_setup_jovee: '30 ph\u00FAt',
+                compare_volume: 'Gi\u1EDBi h\u1EA1n cu\u1ED9c g\u1ECDi',
+                compare_volume_human: '~50/ng\u00E0y',
+                compare_volume_jovee: 'Kh\u00F4ng gi\u1EDBi h\u1EA1n',
+                tier1_name: 'C\u01A1 B\u1EA3n',
+                tier1_desc: 'Ph\u00F9 h\u1EE3p ti\u1EC7m m\u1ED9t \u0111\u1ECBa \u0111i\u1EC3m',
+                tier1_f1: 'T\u1ED1i \u0111a 200 cu\u1ED9c g\u1ECDi/th\u00E1ng',
+                tier1_f2: 'Ti\u1EBFng Anh + Ti\u1EBFng Vi\u1EC7t',
+                tier1_f3: 'X\u00E1c nh\u1EADn qua tin nh\u1EAFn',
+                tier1_f4: 'B\u00E1o c\u00E1o h\u00E0ng ng\u00E0y',
+                tier2_badge: 'PH\u1ED4 BI\u1EBEN NH\u1EA4T',
+                tier2_name: 'Pro',
+                tier2_desc: 'Ph\u00F9 h\u1EE3p ti\u1EC7m \u0111ang ph\u00E1t tri\u1EC3n',
+                tier2_f1: 'T\u1ED1i \u0111a 600 cu\u1ED9c g\u1ECDi/th\u00E1ng',
+                tier2_f2: '3 ng\u00F4n ng\u1EEF',
+                tier2_f3: '\u0110\u1ED3ng b\u1ED9 l\u1ECBch',
+                tier2_f4: 'L\u1EDDi ch\u00E0o t\u00F9y ch\u1EC9nh',
+                tier2_f5: 'H\u1ED7 tr\u1EE3 \u01B0u ti\u00EAn',
+                tier3_name: 'Cao C\u1EA5p',
+                tier3_desc: 'Ph\u00F9 h\u1EE3p nhi\u1EC1u \u0111\u1ECBa \u0111i\u1EC3m ho\u1EB7c l\u01B0\u1EE3ng l\u1EDBn',
+                tier3_f1: 'Kh\u00F4ng gi\u1EDBi h\u1EA1n cu\u1ED9c g\u1ECDi',
+                tier3_f2: 'T\u1EA5t c\u1EA3 ng\u00F4n ng\u1EEF',
+                tier3_f3: 'H\u1ED7 tr\u1EE3 nhi\u1EC1u \u0111\u1ECBa \u0111i\u1EC3m',
+                tier3_f4: 'Hu\u1EA5n luy\u1EC7n gi\u1ECDng n\u00F3i',
+                tier3_f5: 'Qu\u1EA3n l\u00FD ri\u00EAng',
+                tier_cta: '\u0110\u1EB7t L\u1ECBch Demo',
+                guarantee_bold: '\u0110\u1EA3m b\u1EA3o ho\u00E0n ti\u1EC1n 14 ng\u00E0y',
+                guarantee_rest: 'H\u1EE7y b\u1EA5t c\u1EE9 l\u00FAc n\u00E0o \u00B7 Kh\u00F4ng ph\u00ED c\u00E0i \u0111\u1EB7t',
+                faq_eyebrow: 'C\u00C2U TR\u1EA2 L\u1EDCI TH\u1EB2NG',
+                faq_h2: 'C\u00E2u h\u1ECFi? Ch\u00FAng t\u00F4i c\u00F3 <em>c\u00E2u tr\u1EA3 l\u1EDDi.</em>',
+                faq1_q: 'Nghe c\u00F3 gi\u1ED1ng ng\u01B0\u1EDDi th\u1EADt kh\u00F4ng?',
+                faq1_a: 'C\u00F3. Ch\u00FAng t\u00F4i s\u1EED d\u1EE5ng c\u00F4ng ngh\u1EC7 gi\u1ECDng n\u00F3i AI ti\u00EAn ti\u1EBFn nh\u1EA5t. Nghe th\u1EED demo \u1EDF tr\u00EAn \u2014 h\u1EA7u h\u1EBFt ng\u01B0\u1EDDi g\u1ECDi kh\u00F4ng nh\u1EADn ra.',
+                faq2_q: 'N\u1EBFu \u0111\u1EB7t l\u1ECBch sai th\u00EC sao?',
+                faq2_a: 'B\u1EA1n nh\u1EADn \u0111\u01B0\u1EE3c b\u1EA3n ghi v\u00E0 ghi \u00E2m \u0111\u1EA7y \u0111\u1EE7. Ch\u00FAng t\u00F4i \u0111\u00E1nh d\u1EA5u cu\u1ED9c g\u1ECDi kh\u00F4ng ch\u1EAFc ch\u1EAFn \u0111\u1EC3 b\u1EA1n xem l\u1EA1i.',
+                faq3_q: 'T\u00F4i c\u00F3 th\u1EC3 t\u00F9y ch\u1EC9nh kh\u00F4ng?',
+                faq3_a: 'Ho\u00E0n to\u00E0n. L\u1EDDi ch\u00E0o, d\u1ECBch v\u1EE5, gi\u00E1, khuy\u1EBFn m\u00E3i, gi\u1EDD \u2014 t\u1EA5t c\u1EA3 do b\u1EA1n quy\u1EBFt \u0111\u1ECBnh.',
+                faq4_q: 'S\u1ED1 \u0111i\u1EC7n tho\u1EA1i hi\u1EC7n t\u1EA1i th\u00EC sao?',
+                faq4_a: 'Gi\u1EEF nguy\u00EAn. Ch\u00FAng t\u00F4i chuy\u1EC3n ti\u1EBFp qua s\u1ED1 hi\u1EC7n t\u1EA1i. Kh\u00E1ch g\u1ECDi s\u1ED1 c\u0169 nh\u01B0 th\u01B0\u1EDDng.',
+                faq5_q: 'C\u00E0i \u0111\u1EB7t m\u1EA5t bao l\u00E2u?',
+                faq5_a: 'D\u01B0\u1EDBi 30 ph\u00FAt. Ho\u1EA1t \u0111\u1ED9ng ngay trong ng\u00E0y.',
+                faq6_q: 'N\u1EBFu t\u00F4i kh\u00F4ng th\u00EDch th\u00EC sao?',
+                faq6_a: '\u0110\u1EA3m b\u1EA3o ho\u00E0n ti\u1EC1n 14 ng\u00E0y. Kh\u00F4ng c\u1EA7n l\u00FD do.',
+                family_eyebrow: 'GIA \u0110\u00CCNH JOV\u00C9E',
+                family_h2: 'Jov\u00E9e t\u1EA1o ra c\u00F4ng c\u1EE5 m\u00E0 ti\u1EC7m nail <em>\u01B0\u1EDBc mu\u1ED1n.</em>',
+                family_voice: 'B\u1EA1n \u0111ang \u1EDF \u0111\u00E2y. L\u1EC5 t\u00E2n AI kh\u00F4ng bao gi\u1EDD b\u1ECF l\u1EE1 cu\u1ED9c g\u1ECDi.',
+                family_link: '\u1EE8ng d\u1EE5ng \u0111\u1EB7t l\u1ECBch k\u1EBFt n\u1ED1i kh\u00E1ch v\u1EDBi th\u1EE3 nail.',
+                family_ar: 'Th\u1EED m\u00E0u m\u00F3ng tr\u1EF1c ti\u1EBFp b\u1EB1ng camera \u0111i\u1EC7n tho\u1EA1i.',
+                final_h2: 'Cu\u1ED9c g\u1ECDi nh\u1EE1 ti\u1EBFp theo s\u1EBD \u0111i v\u00E0o <em>ti\u1EC7m kh\u00E1c.</em>',
+                final_sub: 'Ng\u1EEBng m\u1EA5t kh\u00E1ch v\u00EC \u0111i\u1EC7n tho\u1EA1i im l\u1EB7ng. \u0110\u1EB7t l\u1ECBch 15 ph\u00FAt \u2014 ch\u00FAng t\u00F4i s\u1EBD cho b\u1EA1n xem Jov\u00E9e Voice v\u1EDBi th\u00F4ng tin ti\u1EC7m th\u1EF1c.',
+                final_cta: '\u0110\u1EB7t L\u1ECBch Demo Mi\u1EC5n Ph\u00ED',
+                final_fine: 'Kh\u00F4ng \u00E1p l\u1EF1c. Kh\u00F4ng c\u1EA7n th\u1EBB. Ch\u1EC9 xem th\u1EED.',
+                footer_tagline: 'L\u1EC5 t\u00E2n AI d\u00E0nh ri\u00EAng cho ti\u1EC7m nail.',
+                footer_lang: 'C\u00F3 s\u1EB5n b\u1EB1ng ti\u1EBFng Anh v\u00E0 ti\u1EBFng Vi\u1EC7t',
                 footer_about: 'V\u1EC1 ch\u00FAng t\u00F4i',
-                footer_artists: 'Cho Th\u1EE3 n\u00E1il',
-                footer_clients: 'Cho Kh\u00E1ch h\u00E0ng',
-                footer_privacy: 'Ch\u00EDnh s\u00E1ch B\u1EA3o m\u1EADt',
-                footer_terms: '\u0110i\u1EC1u kho\u1EA3n D\u1ECBch v\u1EE5'
+                footer_salons: 'D\u00E0nh cho ti\u1EC7m',
+                footer_privacy: 'Ch\u00EDnh s\u00E1ch b\u1EA3o m\u1EADt',
+                footer_terms: '\u0110i\u1EC1u kho\u1EA3n',
+                footer_contact: 'Li\u00EAn h\u1EC7'
             }
         };
 
+        // LANGUAGE SWITCHING
         var currentLang = 'en';
 
         function setLanguage(lang) {
             currentLang = lang;
             document.documentElement.lang = lang;
 
-            // Update all translatable elements
             var elems = document.querySelectorAll('[data-i18n]');
             elems.forEach(function(el) {
                 var key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
-                    if (el.innerHTML.indexOf('<span') !== -1 || key === 'pain_text') {
+                    if (translations[lang][key].indexOf('<') !== -1) {
                         el.innerHTML = translations[lang][key];
                     } else {
                         el.textContent = translations[lang][key];
@@ -1855,106 +2373,81 @@
                 }
             });
 
-            // Update all language toggle buttons
             document.querySelectorAll('.lang-btn').forEach(function(btn) {
                 btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
         }
 
-        // Bind all language buttons (nav, footer, mobile)
         document.querySelectorAll('.lang-btn').forEach(function(btn) {
             btn.addEventListener('click', function() {
                 setLanguage(this.getAttribute('data-lang'));
             });
         });
 
-        /* ==========================================
-           STICKY NAV
-           ========================================== */
-        var nav = document.getElementById('nav');
-
-        function handleScroll() {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        /* ==========================================
-           HAMBURGER MENU
-           ========================================== */
-        var hamburger = document.getElementById('hamburger');
-        var mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        // STICKY NAV
+        var nav = document.querySelector('.nav');
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        document.querySelectorAll('.mobile-link').forEach(function(link) {
+        // HAMBURGER MENU
+        var hamburger = document.querySelector('.hamburger');
+        var mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            this.setAttribute('aria-expanded', this.classList.contains('open'));
+            document.body.style.overflow = this.classList.contains('open') ? 'hidden' : '';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('open');
                 mobileMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
         });
 
-        /* ==========================================
-           TABS
-           ========================================== */
-        var tabBtns = document.querySelectorAll('.tab-btn[data-tab]');
-        var tabContents = document.querySelectorAll('.tab-content');
-
-        tabBtns.forEach(function(btn) {
+        // FAQ ACCORDION
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
             btn.addEventListener('click', function() {
-                var tab = this.getAttribute('data-tab');
+                var item = this.parentElement;
+                var answer = item.querySelector('.faq-answer');
+                var isOpen = item.classList.contains('open');
 
-                tabBtns.forEach(function(b) { b.classList.remove('active'); });
-                // Activate all buttons with the same data-tab (if duplicated)
-                document.querySelectorAll('.tab-btn[data-tab="' + tab + '"]').forEach(function(b) {
-                    b.classList.add('active');
+                document.querySelectorAll('.faq-item').forEach(function(i) {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                 });
 
-                tabContents.forEach(function(c) { c.classList.remove('active'); });
-                document.getElementById('tab-' + tab).classList.add('active');
-
-                // Re-trigger animations
-                document.querySelectorAll('#tab-' + tab + ' .animate-on-scroll').forEach(function(el) {
-                    el.classList.remove('is-visible');
-                    void el.offsetWidth;
-                    el.classList.add('is-visible');
-                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    this.setAttribute('aria-expanded', 'true');
+                }
             });
         });
 
-        /* ==========================================
-           SCROLL ANIMATIONS
-           ========================================== */
+        // SCROLL ANIMATIONS
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, {
-            root: null,
-            rootMargin: '0px 0px -60px 0px',
-            threshold: 0.1
-        });
+        }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
 
         document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
             observer.observe(el);
         });
 
-        /* ==========================================
-           SMOOTH SCROLL
-           ========================================== */
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
                 var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
@@ -1963,7 +2456,23 @@
             });
         });
 
-    })();
+        // CALL TIMER
+        var timerEl = document.getElementById('call-timer');
+        var seconds = 0;
+        setInterval(function() {
+            seconds++;
+            var m = Math.floor(seconds / 60);
+            var s = seconds % 60;
+            timerEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+        }, 1000);
+
+        // "HEAR IT IN ACTION" scrolls to demo
+        document.getElementById('hear-demo-btn').addEventListener('click', function() {
+            var demoSection = document.getElementById('demo');
+            if (demoSection) {
+                demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     </script>
 </body>
 </html>
